@@ -99,7 +99,7 @@ int	init_all_texture(t_file_cub *fcb, t_error_code *err, t_all_texture **texture
 	(*textures)->s_wall = NULL;
 	(*textures)->e_wall = NULL;
 	(*textures)->w_wall = NULL;
-	(*textures)->ceiling_color = NULL;
+	(*textures)->floor_color = NULL;
 	(*textures)->ceiling_color = NULL;
 	fcb->start_map = get_texture(fcb->contained_by_line, err, *textures);
 	if (*err != ERR_NULL)
