@@ -49,7 +49,6 @@ static void	connect_north_south(t_cellule *n, t_cellule *s)
 	}
 }
 
-// Toute les cellule ne sont tous pas connecte
 int	init_all_cellules(t_cellule **cellule, char **txt, int i, int j, t_error_code *err)
 {
 	if (!cellule || !txt || !err || *err != ERR_NULL)
