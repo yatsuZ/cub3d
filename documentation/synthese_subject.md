@@ -63,17 +63,12 @@ Les contraintes incluent l'utilisation de la MinilibX, une gestion parfaite des 
 4. pouvoir s'y deplasser et tourner la camera et verifier que le raycasting marche. Faire les colisions.
 5. fluiditer
 
-BONNUS
+Si un problème de configuration de n’importe quel type est rencontré dans
+le fichier, le programme doit quitter et renvoyer "Error\n" suivi d’un message
+d’erreur explicite de votre choix.
 
-1. Un système de minicarte
-2. Porte qui peuvent être ouvertes/fermées.
-3. Animations (des sprites animés).
-4. Faites pivoter le point de vue avec la souris.
-
-Perso
-
-1. Sauter
-2. se teleporter
+La gestion des fenêtres doit être parfaite : gestion de la minimalisation, du passage
+d’une autre fenetre, etc.
 
 ### verification de l'argument
 
@@ -119,6 +114,56 @@ F 220,100 ,0
 C 225,   30,0
 ```
 
+Vous devez afficher des textures différentes (vous avez le choix) selon si les murs
+sont face nord, sud, est, ouest.
+
+Votre programme doit être capable d’avoir des couleurs différentes pour le sol et
+le plafond
+
 #### verifier la map
 
+La map doit être composée d’uniquement ces 6 caractères : 
+- 0 pour les espaces vides
+- 1 pour les murs
+- N,S,E, W qui représentent la position de départ du joueur et son orientation.
+
+La map doit être fermée/entourée de murs, sinon le programme doit renvoyer
+une erreur.
+
+Sauf pour la map elle-même, les informations de chaque élément peuvent être
+séparées par un ou plusieurs espace(s).
+
 #### les commandes des joueurs
+
+Le programme affiche l’image dans une fenêtre et respecte les règles suivantes :
+
+Les touches flèches du gauche et droite du clavier doivent permettre de faire
+une rotation de la caméra (regarder a gauche et a droite)
+
+Les touches W, A, S et D doivent permettre de déplacer la caméra (déplacement
+du personnage)
+
+Appuyer sur la touche ESC doit fermer la fenêtre et quitter le programme
+proprement
+
+Cliquer sur la croix rouge de la fenêtre doit fermer la fenêtre et quitter le
+programme proprement
+
+## BONUS
+
+Je suis loibre de faire mon propre jeux CREE UNE REGLE dans le makefile pour compiler le code du bonus.
+
+Je peux adapter mes regles si je justifie.
+
+1. Un système de minicarte
+2. Porte qui peuvent être ouvertes/fermées.
+3. Animations (des sprites animés).
+4. Faites pivoter le point de vue avec la souris.
+
+Perso
+
+1. Sauter
+2. se teleporter
+
+
+FIN DE LE SYNTHESE GO CODER!!
