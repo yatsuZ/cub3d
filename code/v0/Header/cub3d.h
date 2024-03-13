@@ -6,14 +6,14 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/20 00:12:53 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:43:54 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "./struct.h"
+# include "./macro.h"
 
 
 // INIT structure
@@ -42,7 +42,7 @@ void			free_world(t_world_data **world);
 
 //------------ STRUCT : CELLULE
 
-int				init_all_cellules(t_cellule **cellule, char **txt, int i, int j, t_error_code *err);
+int				init_all_cellules(t_cellule **cellule, char **txt, t_xy p, t_error_code *err);
 void			free_all_cellules(t_cellule **cellule);
 
 // FT FOR PARSSING
@@ -57,10 +57,9 @@ void		show_end(t_error_code err);
 
 int			size_path(char *line);
 bool		is_empty_line(char *line);
-int			skip_white_space(char *line);
+int			skip_space(char *line);
 void		free_tab_char(char **tableau, int len);
 bool		is_number_array(char **tab, int i);
-bool		char_allowed(char c);
 bool		is_a_legit_line_map(char *str);
 int			size_tab(char **tab);
 
@@ -68,13 +67,21 @@ int			size_tab(char **tab);
 
 void		*ft_calloc(size_t nmemb, size_t size);
 size_t		ft_strlen(const char *cha);
-bool		ft_strcmp(char *s1, char *s2);
+bool		ft_strcmp(char *s1, char *s2, long size);
 char		*get_next_line(int fd, int err);
 int			ft_atoi(const char *nptr);
 char		*ft_strdup(const char *s);
 int			ft_isdigit(int character);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(const char *s, char c);
+
+// GNL UTILS
+
+char	*ft_memcpy2(char *dest, char *src, int n);
+char	*ft_strjoin2(char *s1, char *s2);
+char	*ft_strdup2(char *s, int option);
+void	*ft_calloc2(int nmemb, int size);
+int		ft_strlen_or_findendl(char *s, int option);
 
 // Debeugage
 

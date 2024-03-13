@@ -6,12 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:18:02 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/20 00:10:16 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:36:02 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
-#include "./gnl_utils.c"
 
 char	*ft_strcutendl(char *str, char **after, register int i, int i_endl)
 {

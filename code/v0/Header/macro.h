@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   import.h                                           :+:      :+:    :+:   */
+/*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 17:31:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 15:34:44 by yzaoui           ###   ########.fr       */
+/*   Created: 2024/03/13 17:28:00 by yzaoui            #+#    #+#             */
+/*   Updated: 2024/03/13 17:29:42 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMPORT_H
-# define IMPORT_H
+#ifndef MACRO_H
+# define MACRO_H
 
-# include "./constante.h"
+# include "./struct.h"
 
-# include "./../Library/minilibx-linux/mlx.h"
+# define CHAR_ALLOWED(c) ((c == ' ') || (c == '0') || (c == '1') || \
+(c == 'N') || (c == 'S') || (c == 'E') || (c == 'W') || (c == '\n'))
 
-# include <unistd.h>
-
-# include <stdio.h>
-
-# include <stdlib.h>
-
-# include <stdbool.h>
-
-# include <fcntl.h>
-
-# include <errno.h>
-
-# include <math.h>
-
-#endif
+# endif

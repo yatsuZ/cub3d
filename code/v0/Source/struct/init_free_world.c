@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:49:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/14 20:02:00 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:57:55 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,18 @@ static bool	is_a_legit_syntaxe_map(char **texte, int start_i)
 	return (true);
 }
 
+static t_error_code
+	legit_map(t_world_data *world)
+{
+	if (world == NULL)
+		return (ERR_MALLOC);
+	return (ERR_NULL);
+}
+
 int	init_world(t_file_cub *fcb, t_error_code *err, t_world_data **world)
 {
+	t_xy	p;
+
 	if (!world || !err || !fcb || *err != ERR_NULL)
 		return (1);
 	*world = ft_calloc(1, sizeof(t_world_data));
@@ -39,10 +49,12 @@ int	init_world(t_file_cub *fcb, t_error_code *err, t_world_data **world)
 	(*world)->map = NULL;
 	if (is_a_legit_syntaxe_map(fcb->contained_by_line, fcb->start_map) == false)
 		return (*err = ERR_BAD_SYNTAXE_MAP);
-	init_all_cellules(&(*world)->map, fcb->contained_by_line, fcb->start_map, 0, err);
-	// if (*err != ERR_NULL)
-	// 	return (1);
-	// *err = legit_map(*world);
+	p.x = fcb->start_map;
+	p.y = 0;
+	init_all_cellules(&(*world)->map, fcb->contained_by_line, p, err);
+	if (*err != ERR_NULL)
+		return (1);
+	*err = legit_map(*world);
 	return (*err != ERR_NULL);
 }
 

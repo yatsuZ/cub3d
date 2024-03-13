@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/20 00:25:38 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 16:22:44 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	init_all(t_all_data **all, char *path_file)
 {
-
 	*all = ft_calloc(1, sizeof(t_all_data));
 	if (!(*all))
 		return (EXIT_FAILURE);

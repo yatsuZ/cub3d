@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:05:48 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/15 00:38:19 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:58:10 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,9 @@ void	show_map_2d(t_cellule *c)
 
 void	show_cellule(t_cellule *c)
 {
-	printf("-----------------\nAdresse = %p, i = %d | j = %d | ELEMENT = ", c, c->i, c->j);
+	printf("-----------------\
+	\nAdresse = %p, i = %ld | j = %ld | ELEMENT = "\
+	, c, c->position.x, c->position.y);
 	show_element(c->element);
 	printf("\n");
 	put_color_txt(BLEU);
@@ -92,7 +94,6 @@ void	show_cellule(t_cellule *c)
 	put_color_txt(JAUNE);
 	printf("OUEST = %p\t|\n", c->west);
 	put_color_txt(EMPTY_COLOR);
-
 }
 
 void	show_world(t_world_data *w)

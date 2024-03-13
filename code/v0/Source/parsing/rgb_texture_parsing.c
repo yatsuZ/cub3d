@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:59:58 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 23:06:06 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:38:59 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static unsigned long	rgb_to_long(int r, int g, int b)
 	return (res);
 }
 
-static t_error_code	set_rgb_color(t_all_texture *all_t, char **rgb_tab, t_texture texture)
+static t_error_code
+	set_rgb_color(t_all_texture *all_t, char **rgb_tab, t_texture texture)
 {
 	int	rgb[3];
 	int	i;
@@ -44,7 +45,8 @@ static t_error_code	set_rgb_color(t_all_texture *all_t, char **rgb_tab, t_textur
 	return (ERR_NULL);
 }
 
-t_error_code	get_rgb_texture(char *line, t_texture texture, t_all_texture *all_t)
+t_error_code
+	get_rgb_texture(char *line, t_texture texture, t_all_texture *all_t)
 {
 	int				i;
 	t_error_code	err;
@@ -56,14 +58,16 @@ t_error_code	get_rgb_texture(char *line, t_texture texture, t_all_texture *all_t
 		all_t->ceiling_color = ft_calloc(1, sizeof(unsigned long));
 	else
 		return (ERR_SAME_TEXTURE);
-	if ((all_t->ceiling_color == NULL && texture == CEILING_T) || (all_t->floor_color == NULL && texture == FLOOR_T))
-			return (ERR_MALLOC);
-	i = skip_white_space(line) + 2;
-	i += skip_white_space(line + i);
-	rgb_tab = ft_split(line + i , ',');
+	if ((all_t->ceiling_color == NULL && texture == CEILING_T) || \
+	(all_t->floor_color == NULL && texture == FLOOR_T))
+		return (ERR_MALLOC);
+	i = skip_space(line) + 2;
+	i += skip_space(line + i);
+	rgb_tab = ft_split(line + i, ',');
 	if (!rgb_tab)
 		return (ERR_MALLOC);
 	if (!is_number_array(rgb_tab, 0) || size_tab(rgb_tab) < 3)
 		return (free_tab_char(rgb_tab, -1), ERR_BAD_SYNTAXE_TEXTURE);
-	return (err = set_rgb_color(all_t, rgb_tab, texture), free_tab_char(rgb_tab, -1), err);
+	err = set_rgb_color(all_t, rgb_tab, texture);
+	return (free_tab_char(rgb_tab, -1), err);
 }

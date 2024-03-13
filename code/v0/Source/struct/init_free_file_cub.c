@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 19:42:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 22:34:48 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:13:49 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static int	get_content(t_file_cub *fcb, t_error_code *err)
 	return (get_next_line(fcb->fd, 1), close(fcb->fd), 0);
 }
 
-
 static int	nbr_line_file(char *file, t_error_code *err)
 {
 	int		fd;
@@ -57,7 +56,10 @@ static int	nbr_line_file(char *file, t_error_code *err)
 	{
 		free(line);
 		if (res == __INT_MAX__)
-			return (*err = ERR_TO_MUCH_LINE, get_next_line(fd, 1), close(fd), -1);
+		{
+			*err = ERR_TO_MUCH_LINE;
+			return (get_next_line(fd, 1), close(fd), -1);
+		}
 		res++;
 		line = get_next_line(fd, 0);
 	}

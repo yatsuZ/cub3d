@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/14 18:41:56 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:18:08 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define STRUCT_H
 
 # include "./import.h"
+
+typedef struct s_xy
+{
+	long	x;
+	long	y;
+}	t_xy;
 
 typedef struct s_all_texture
 {
@@ -27,8 +33,7 @@ typedef struct s_all_texture
 
 typedef struct s_cellule
 {
-	int						i;
-	int						j;
+	t_xy					position;
 	t_element_map			element;
 	struct s_cellule		*north;
 	struct s_cellule		*south;

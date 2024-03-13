@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:49:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/15 00:21:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:46:02 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	init_cellule(t_cellule **cellule, char c, t_error_code *err)
 	(*cellule)->south = NULL;
 	(*cellule)->east = NULL;
 	(*cellule)->west = NULL;
-	(*cellule)->i = -1;
-	(*cellule)->j = -1;
-	if (!(char_allowed(c) && c != '\n'))
+	(*cellule)->position.x = -1;
+	(*cellule)->position.y = -1;
+	if (!(CHAR_ALLOWED(c) && c != '\n'))
 		return (*err = ERR_BAD_SYNTAXE_MAP, 1);
 	if (c == ' ')
 		(*cellule)->element = VOID;
@@ -49,24 +49,28 @@ static void	connect_north_south(t_cellule *n, t_cellule *s)
 	}
 }
 
-int	init_all_cellules(t_cellule **cellule, char **txt, int i, int j, t_error_code *err)
+int	init_all_cellules(t_cellule **cellule, char **txt, \
+t_xy p, t_error_code *err)
 {
 	if (!cellule || !txt || !err || *err != ERR_NULL)
 		return (1);
-	if (txt[i] == NULL || j < 0 || txt[i][j] == '\0' || txt[i][j] == '\n')
+	if (txt[p.x] == NULL || p.y < 0 || \
+	txt[p.x][p.y] == '\0' || txt[p.x][p.y] == '\n')
 		return (0);
-	init_cellule(cellule, txt[i][j], err);
+	init_cellule(cellule, txt[p.x][p.y], err);
 	if (*err != ERR_NULL)
 		return (1);
-	(*cellule)->j = j;
-	(*cellule)->i = i;
-	j = j + 1;
-	init_all_cellules(&((*cellule)->east), txt, i, j, err);
+	(*cellule)->position = p;
+	p.y = p.y + 1;
+	init_all_cellules(&((*cellule)->east), txt, p, err);
 	if ((*cellule)->east)
 		(*cellule)->east->west = (*cellule);
-	i = i + 1;
-	if (j == 1)
-		init_all_cellules(&((*cellule)->south), txt, i, 0, err);
+	p.x = p.x + 1;
+	if (p.y == 1)
+	{
+		p.y = 0;
+		init_all_cellules(&((*cellule)->south), txt, p, err);
+	}
 	if ((*cellule)->south)
 		(*cellule)->south->north = (*cellule);
 	connect_north_south(*cellule, (*cellule)->south);
@@ -84,9 +88,8 @@ void	free_all_cellules(t_cellule **cellule)
 	(*cellule)->south = NULL;
 	(*cellule)->east = NULL;
 	(*cellule)->west = NULL;
-	(*cellule)->i = -1;
-	(*cellule)->j = -1;
+	(*cellule)->position.x = -1;
+	(*cellule)->position.y = -1;
 	free(*cellule);
 	*cellule = NULL;
 }
-

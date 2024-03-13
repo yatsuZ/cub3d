@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 21:57:49 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:48:55 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	show_end2(t_error_code err)
 
 void	show_end(t_error_code err)
 {
+	printf("");
 	if (err == ERR_MALLOC)
 		printf("ERROR: Malloc Fail.\n");
 	else if (err == ERR_UNKNOW)

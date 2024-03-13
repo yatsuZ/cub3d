@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/02/20 00:22:37 by yzaoui           ###   ########.fr        #
+#    Updated: 2024/03/13 17:48:09 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ UTILS_PATH  =	utils/
 UTILS_FILES =	ft_calloc.c	\
 				ft_split.c	\
 				gnl.c		\
+				gnl_utils.c	\
 				utils1.c	\
 				utils2.c	\
 				utils3.c
@@ -93,6 +94,6 @@ fclean: clean
 
 norme:
 	clear
-	@ if ! norminette | grep "Error"; then echo "\033[32mOK!\033[0m"; fi
+	@ if ! norminette ./Source | grep "Error"; then echo "\033[32mOK!\033[0m"; fi
 
 re: fclean all

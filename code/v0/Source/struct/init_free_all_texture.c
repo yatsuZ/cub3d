@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 00:32:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 22:42:39 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:13:16 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,30 @@ static t_texture	get_type_texture(char *line, bool *legit_line)
 
 	if (!line)
 		return (*legit_line = true, IDK_T);
-	j = skip_white_space(line);
-	if (line[j] == 'N' && line[j + 1] == 'O' && line[j + 2] <= 32 && 
-	line[j + 1])
+	j = skip_space(line);
+	if (ft_strcmp(line + j, "NO ", 3))
 		return (NORTH_T);
-	else if (line[j] == 'S' && line[j + 1] == 'O' && line[j + 2] <= 32 && 
-	line[j + 1])
+	else if (ft_strcmp(line + j, "SO ", 3))
 		return (SOUTH_T);
-	else if (line[j] == 'W' && line[j + 1] == 'E' && line[j + 2] <= 32 && 
-	line[j + 1])
+	else if (ft_strcmp(line + j, "WE ", 3))
 		return (WEST_T);
-	else if (line[j] == 'E' && line[j + 1] == 'A' && line[j + 2] <= 32 && 
-	line[j + 1])
+	else if (ft_strcmp(line + j, "EA ", 3))
 		return (EAST_T);
-	else if (line[j] == 'F' && line[j + 1] <= 32 && line[j + 1])
+	else if (ft_strcmp(line + j, "F ", 2))
 		return (FLOOR_T);
-	else if (line[j] == 'C' && line[j + 1] <= 32 && line[j + 1])
+	else if (ft_strcmp(line + j, "C ", 2))
 		return (CEILING_T);
 	if (line[j + 1] == '\0')
 		*legit_line = true;
 	return (IDK_T);
 }
 
-static int	get_texture(char **contenu, t_error_code *err, t_all_texture *textures)
+static \
+int	get_texture(char **contenu, t_error_code *err, t_all_texture *textures)
 {
 	t_texture	tmp;
 	bool		legit_line;
-	int	i;
+	int			i;
 
 	i = 0;
 	while (contenu[i] && *err == ERR_NULL)
@@ -59,7 +56,8 @@ static int	get_texture(char **contenu, t_error_code *err, t_all_texture *texture
 		{
 			if (is_a_legit_line_map(contenu[i]))
 				return (i);
-			return (*err = ERR_BAD_SYNTAXE_TEXTURE, printf("%s\n", contenu[i]), i);
+			*err = ERR_BAD_SYNTAXE_TEXTURE;
+			return (printf("%s\n", contenu[i]), i);
 		}
 		i++;
 	}
@@ -88,7 +86,8 @@ void	free_all_texture(t_all_texture **textures)
 	*textures = NULL;
 }
 
-int	init_all_texture(t_file_cub *fcb, t_error_code *err, t_all_texture **textures)
+int	init_all_texture(t_file_cub *fcb, t_error_code *err, \
+t_all_texture **textures)
 {
 	if (!textures || !err || !fcb || *err != ERR_NULL)
 		return (1);
@@ -104,7 +103,9 @@ int	init_all_texture(t_file_cub *fcb, t_error_code *err, t_all_texture **texture
 	fcb->start_map = get_texture(fcb->contained_by_line, err, *textures);
 	if (*err != ERR_NULL)
 		return (1);
-	if (!(*textures)->n_wall || !(*textures)->s_wall || !(*textures)->e_wall || !(*textures)->w_wall || !(*textures)->ceiling_color || !(*textures)->floor_color)
+	if (!(*textures)->n_wall || !(*textures)->s_wall || \
+	!(*textures)->e_wall || !(*textures)->w_wall || \
+	!(*textures)->ceiling_color || !(*textures)->floor_color)
 		return (*err = ERR_MISSING_TEXTURE, 1);
 	else if (check_is_file_and_extension((*textures)->n_wall, XPM)
 		|| check_is_file_and_extension((*textures)->s_wall, XPM)
@@ -113,4 +114,3 @@ int	init_all_texture(t_file_cub *fcb, t_error_code *err, t_all_texture **texture
 		return (*err = ERR_INVALID_FILE, 1);
 	return (0);
 }
-

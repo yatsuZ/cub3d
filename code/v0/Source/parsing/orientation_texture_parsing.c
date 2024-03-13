@@ -6,13 +6,14 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:43:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 22:44:24 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/13 17:37:06 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-static t_error_code	fill_texture_path(t_all_texture *all_t, char *path, t_texture textu)
+static t_error_code
+	fill_texture_path(t_all_texture *all_t, char *path, t_texture textu)
 {
 	if (textu == NORTH_T && !all_t->n_wall)
 		all_t->n_wall = path;
@@ -33,13 +34,14 @@ static t_error_code	fill_texture_path(t_all_texture *all_t, char *path, t_textur
 	return (ERR_NULL);
 }
 
-t_error_code	get_orientation_texture(char *line, t_texture textu, t_all_texture *all_t)
+t_error_code
+	get_orientation_texture(char *line, t_texture textu, t_all_texture *all_t)
 {
 	char			*path;
 	int				i;
 
-	i = skip_white_space(line) + 3;
-	i += skip_white_space(line + i);
+	i = skip_space(line) + 3;
+	i += skip_space(line + i);
 	path = ft_substr(line, i, size_path(line + i));
 	if (!path)
 		return (ERR_MALLOC);
