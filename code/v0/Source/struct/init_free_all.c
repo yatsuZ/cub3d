@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 16:22:44 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:50:31 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	init_all(t_all_data **all, char *path_file)
 	(*all)->err = ERR_NULL;
 	init_file_cub(path_file, &(*all)->err, &(*all)->fcb);
 	init_all_texture((*all)->fcb, &(*all)->err, &(*all)->textures);
+	if ((*all)->err == ERR_NULL && (*all)->fcb && (*all)->fcb->start_map < 0)
+		(*all)->err = ERR_MISSING_MAP;
 	init_world((*all)->fcb, &(*all)->err, &(*all)->world);
 	return (!((*all)->err == ERR_NULL));
 }

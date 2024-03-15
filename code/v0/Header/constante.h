@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/19 22:29:11 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:37:43 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ typedef enum e_element_map
 	UNKNOW,
 	VOID,
 	WALL,
-	SPAWN,
+	SPAWN_N,
+	SPAWN_S,
+	SPAWN_E,
+	SPAWN_W,
 	FLOOR_E
 }	t_element_map;
 
@@ -75,7 +78,8 @@ typedef enum e_error_code
 	ERR_BAD_SYNTAXE_MAP,
 	ERR_WALL_NOT_CLOSE,
 	ERR_REDUNDANCE_SPAWN,
-	ERR_MISSING_MAP
+	ERR_MISSING_MAP,
+	ERR_MISSING_SPAWN,
 }	t_error_code;
 
 typedef enum e_extension_file

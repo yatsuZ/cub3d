@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 00:32:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:13:16 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 01:06:58 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,10 @@ int	get_texture(char **contenu, t_error_code *err, t_all_texture *textures)
 			if (is_a_legit_line_map(contenu[i]))
 				return (i);
 			*err = ERR_BAD_SYNTAXE_TEXTURE;
-			return (printf("%s\n", contenu[i]), i);
+			return (i);
 		}
 		i++;
 	}
-	if (*err == ERR_NULL)
-		*err = ERR_MISSING_MAP;
 	return (-1);
 }
 

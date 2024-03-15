@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:43:54 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:10:46 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void			free_world(t_world_data **world);
 
 int				init_all_cellules(t_cellule **cellule, char **txt, t_xy p, t_error_code *err);
 void			free_all_cellules(t_cellule **cellule);
+t_error_code	for_each_cellule(t_cellule *c, t_world_data *w, \
+t_error_code (*f)(t_cellule *, t_world_data *));
 
 // FT FOR PARSSING
 
@@ -52,6 +54,12 @@ t_error_code	check_is_file_and_extension(char *arg, t_extension_file option);
 // Error gestion
 
 void		show_end(t_error_code err);
+
+// Verification des elements
+
+t_error_code	verif_element_spawn(t_cellule *c, t_world_data *w);
+t_error_code	verif_element_floor(t_cellule *c);
+t_error_code	verif_element_void(t_cellule *c);
 
 // FT UTILS
 
@@ -62,6 +70,8 @@ void		free_tab_char(char **tableau, int len);
 bool		is_number_array(char **tab, int i);
 bool		is_a_legit_line_map(char *str);
 int			size_tab(char **tab);
+t_element_map
+			define_element(char c);
 
 // OLD FT UTILS
 

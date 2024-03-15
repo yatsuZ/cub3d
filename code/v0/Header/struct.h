@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:18:08 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/14 22:31:10 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ typedef struct s_world_data
 {
 	t_cardinal		start_angle;
 	t_cellule		*map;
-	int				i_spawn;
-	int				j_spawn;
+	t_xy			spawn;
 }	t_world_data ;
 
 typedef struct s_file_cub

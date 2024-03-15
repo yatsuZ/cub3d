@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:48:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:32:16 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:31:35 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,23 @@ bool	ft_strcmp(char *s1, char *s2, long size)
 	if ((size > 0 && i < size) && s1[i] != s2[i])
 		return (false);
 	return (true);
+}
+
+t_element_map	define_element(char c)
+{
+	if (c == ' ' || c == '\n')
+		return (VOID);
+	else if (c == '0')
+		return (FLOOR_E);
+	else if (c == '1')
+		return (WALL);
+	else if (c == 'N')
+		return (SPAWN_N);
+	else if (c == 'S')
+		return (SPAWN_S);
+	else if (c == 'E')
+		return (SPAWN_E);
+	else if (c == 'W')
+		return (SPAWN_W);
+	return (UNKNOW);
 }

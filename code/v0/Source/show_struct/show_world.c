@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:05:48 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:58:10 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:11:42 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	show_element(t_element_map em)
 		put_color_txt(ROUGE);
 		printf("M");
 	}
-	else if (em == SPAWN)
+	else if (em >= SPAWN_N && em <= SPAWN_W)
 	{
 		put_color_txt(JAUNE);
 		printf("S");
@@ -101,7 +101,7 @@ void	show_world(t_world_data *w)
 	if (!w)
 		return ;
 	show_map_2d(w->map);
-	printf("START Spawn\ni = %d\t|j = %d\n", w->i_spawn, w->j_spawn);
+	printf("START Spawn\ni = %ld\t|j = %ld\n", w->spawn.x, w->spawn.y);
 	printf("La direction de depart : ");
 	show_cardinal(w->start_angle);
 }

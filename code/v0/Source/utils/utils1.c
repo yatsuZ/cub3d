@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:48:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:50:05 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 01:06:34 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ bool	is_empty_line(char *line)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] == ' ')
+		if (line[i] != ' ' && line[i] != '\n')
 			return (false);
 		i++;
 	}

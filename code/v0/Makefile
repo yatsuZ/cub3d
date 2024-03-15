@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/13 17:48:09 by yzaoui           ###   ########.fr        #
+#    Updated: 2024/03/15 00:12:39 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ UTILS_FILES =	ft_calloc.c	\
 				gnl_utils.c	\
 				utils1.c	\
 				utils2.c	\
-				utils3.c
+				utils3.c	\
+				verif_element.c
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\

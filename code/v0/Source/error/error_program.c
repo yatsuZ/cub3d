@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:48:55 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/15 00:38:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@ static void	show_end2(t_error_code err)
 {
 	if (err == ERR_BAD_SYNTAXE_MAP)
 		printf("ERROR: Invalide syntax for MAP.\n");
+	else if (err == ERR_REDUNDANCE_SPAWN)
+		printf("ERROR: Invalide Multiple spawn in map.\n");
+	else if (err == ERR_MISSING_SPAWN)
+		printf("ERROR: MISSING SPAWN in map !\n");
+	else if (err == ERR_WALL_NOT_CLOSE)
+		printf("ERROR: MAP NOT CLOSE BY WALL !\n");
 }
 
 void	show_end(t_error_code err)
 {
-	printf("");
+	if (err == ERR_NULL)
+		return ;
+	printf("error\n");
 	if (err == ERR_MALLOC)
 		printf("ERROR: Malloc Fail.\n");
 	else if (err == ERR_UNKNOW)
@@ -41,8 +49,6 @@ void	show_end(t_error_code err)
 		printf("ERROR: MESSING: a TEXTURE.\n");
 	else if (err == ERR_MISSING_MAP)
 		printf("ERROR: MESSING: a MAP.\n");
-	else if (err == ERR_NULL)
-		printf("SUCCESS.\n");
 	else
 		show_end2(err);
 }
