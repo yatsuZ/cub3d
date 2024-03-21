@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/14 22:31:10 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/21 11:59:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,6 @@ typedef struct s_file_cub
 	int		fd;
 	int		start_map;
 }	t_file_cub;
-
-typedef struct s_all_data
-{
-	t_error_code	err;
-	t_file_cub		*fcb;
-	t_all_texture	*textures;
-	t_world_data	*world;
-}	t_all_data;
-
-typedef struct s_img
-{
-	void	*img;
-	int		*addr;
-	int		pixel_bits;
-	int		size_line;
-	int		endian;
-}	t_img;
 
 typedef struct s_data_file
 {
@@ -130,6 +113,26 @@ typedef struct s_data_file
 	int				texy;
 	int				texpos;
 }	t_data_file;
+
+typedef struct s_all_data
+{
+	t_error_code	err;
+	t_file_cub		*fcb;
+	t_all_texture	*textures;
+	t_world_data	*world;
+	t_data_file		*file;
+}	t_all_data;
+
+typedef struct s_img
+{
+	void	*img;
+	int		*addr;
+	int		pixel_bits;
+	int		size_line;
+	int		endian;
+}	t_img;
+
+
 
 
 #endif

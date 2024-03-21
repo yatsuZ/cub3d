@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
+#    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/15 00:12:39 by yzaoui           ###   ########.fr        #
+#    Updated: 2024/03/21 11:56:01 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,9 @@ UTILS_FILES =	ft_calloc.c	\
 				utils3.c	\
 				verif_element.c
 
+EXEC_PATH  =	executing/
+EXEC_FILES =	start.c	\
+
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\
 				${addprefix ${UTILS_PATH}, ${UTILS_FILES}}				\
@@ -53,6 +56,7 @@ CUB3D_FILES =	main.c													\
 				${addprefix ${SHOW_STRUCT_PATH}, ${SHOW_STRUCT_FILES}}	\
 				${addprefix ${PARSING_PATH}, ${PARSING_FILES}}			\
 				${addprefix ${ERROR_PATH}, ${ERROR_FILES}}				\
+				${addprefix ${EXEC_PATH}, ${EXEC_FILES}}				\
 
 OBJ_PATH  = obj/
 CUB3D_OBJ = ${addprefix ${OBJ_PATH}, ${CUB3D_FILES:.c=.o}}
@@ -61,11 +65,11 @@ CUB3D_OBJ = ${addprefix ${OBJ_PATH}, ${CUB3D_FILES:.c=.o}}
 
 MLX_FLAGS	=	-lmlx -lXext -lX11 -lm
 MLX_LIB		=	-I ./Library/minilibx-linux -L ./Library/minilibx-linux
-MAKE_MLX	=	make -s -C ./Library/minilibx-linux
+MAKE_MLX	=	@make -s -C ./Library/minilibx-linux
 
 HEADER = ./Header
 
-RM = rm -rf
+RM = @rm -f -rf
 CC = cc
 C_FLAGS = -g3 -Wall -Wextra -Werror -g
 
@@ -77,14 +81,14 @@ all: $(OBJ_PATH) ${PROGRAM_NAME}
 
 ${PROGRAM_NAME}: ${CUB3D_OBJ}
 	${MAKE_MLX}
-	$(CC) $(C_FLAGS) ${MLX_LIB} ${CUB3D_OBJ} ${MLX_FLAGS} -o ${PROGRAM_NAME}
+	@$(CC) $(C_FLAGS) ${MLX_LIB} ${CUB3D_OBJ} ${MLX_FLAGS} -o ${PROGRAM_NAME}
 
 $(OBJ_PATH)%.o: $(CUB3D_PATH)%.c
 	@mkdir -p $(@D)
-	$(CC) $(C_FLAGS) -I /usr/include -I mlx_linux -O3 -c $< -o $@
+	@$(CC) $(C_FLAGS) -I /usr/include -I mlx_linux -O3 -c $< -o $@
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
+	@mkdir -p $(OBJ_PATH)
 
 clean:
 	${MAKE_MLX} clean

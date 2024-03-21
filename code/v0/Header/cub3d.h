@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:10:46 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/21 11:57:27 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,8 @@ void		show_file_cub(t_file_cub *fcb);
 void		show_texture(t_all_texture *textures);
 void		show_world(t_world_data *w);
 void		show_cellule(t_cellule *c);
+
+// EXECUTING
+void		start_exec(t_all_data **all);
 
 #endif
