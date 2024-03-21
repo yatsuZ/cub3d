@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:45:46 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 12:01:27 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:00:06 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ int	main(int argc, char **argv)
 	//show_world(all->world);
 	start_exec(&all);
 	return (end(all));
+	//return (0);
 }

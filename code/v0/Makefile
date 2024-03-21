@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/21 11:56:01 by lazanett         ###   ########.fr        #
+#    Updated: 2024/03/21 18:57:52 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ UTILS_FILES =	ft_calloc.c	\
 
 EXEC_PATH  =	executing/
 EXEC_FILES =	start.c	\
+				init_free_data_file.c\
+				key.c\
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\

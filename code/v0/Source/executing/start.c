@@ -6,55 +6,41 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/21 11:39:04 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:49:30 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-// static int	init_data_file(t_error_code *err, t_data_file *file)
-// {
-// 	if (!err || !file || *err != ERR_NULL)
-// 		return (1);
-// 	file = ft_calloc(0, sizeof(t_data_file));
-// 	if (!file)
-// 		return (*err = ERR_MALLOC, 1);
-// 	return (printf("coucou\n"));
-// }
-// void	start_exec(t_all_data *all)
-// {
-// 	init_data_file(&all->err, all->file);
-// 	all->file->mlx = mlx_init();
-// 	if (all->file->mlx == NULL)
-// 		return ;
-// 	all->file->win = mlx_new_window(all->file->mlx, 1000, 1000, "Game");
-// 	// tab_img(&elem);
-// 	// mlx_hook(all->file->window, KeyPress, 1L << 0, ft_key, &elem);
-// 	// mlx_hook(all->file->window, ClientMessage, 1L << 5, ft_mouse, 
-// 	//&elem);
-// 	mlx_loop(all->file->mlx);
-// }
-
-
-static int	init_data_file(t_error_code *err, t_data_file **file)
-{
-	if (!err || !file || *err != ERR_NULL)
-		return (1);
-	*file = ft_calloc(1, sizeof(t_data_file));
-	if (!(*file))
-		return (*err = ERR_MALLOC, 1);
-	return (printf("coucou\n"));
-}
-void	start_exec(t_all_data **all) {
+t_error_code	start_exec(t_all_data **all) {
 
 	init_data_file(&(*all)->err, &(*all)->file);
 	(*all)->file->mlx = mlx_init();
 	if ((*all)->file->mlx == NULL)
-		return ;
-	(*all)->file->win = mlx_new_window((*all)->file->mlx, 1000, 1000, "Game");
-	// tab_img(&elem);
-	// mlx_hook(all->file->window, KeyPress, 1L << 0, ft_key, &elem);
-	// mlx_hook(all->file->window, ClientMessage, 1L << 5, ft_mouse, 
-	//&elem);
+		return  ERR_INIT_LIBX;
+	screen_size(*all);
+	(*all)->file->win = mlx_new_window((*all)->file->mlx, (*all)->file->sizex, (*all)->file->sizey, "Cub3D");
+	if ((*all)->file->win == NULL)
+		return ERR_WIN_LIBX;
+	mlx_hook((*all)->file->win, 2, KeyPressMask, &key_press, (*all)->file);
+	mlx_hook((*all)->file->win, 3, KeyReleaseMask, &key_drop, (*all)->file);
+	mlx_hook((*all)->file->win, ClientMessage, 1L << 5, escape, (*all)->file);
 	mlx_loop((*all)->file->mlx);
+	return ERR_NULL;
+}
+
+void	screen_size(t_all_data *all)
+{
+	int	screen_width;
+	int	screen_height;
+
+	mlx_get_screen_size(all->file->mlx, &screen_width, &screen_height);
+	if (screen_width >= 1920)
+		all->file->sizex = 1920;
+	else
+		all->file->sizex  = 848;
+	if (screen_height >= 1080)
+		all->file->sizey = 1080;
+	else
+		all->file->sizey = 480;
 }

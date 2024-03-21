@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_program.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:38:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/21 16:51:10 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ static void	show_end2(t_error_code err)
 		printf("ERROR: MISSING SPAWN in map !\n");
 	else if (err == ERR_WALL_NOT_CLOSE)
 		printf("ERROR: MAP NOT CLOSE BY WALL !\n");
+	else if (err == ERR_INIT_LIBX)
+		printf("ERROR: Minilibx init failed\n");
+	else if (err ==	ERR_WIN_LIBX)
+		printf("ERROR: Minilibx init window failed\n");
 }
 
 void	show_end(t_error_code err)

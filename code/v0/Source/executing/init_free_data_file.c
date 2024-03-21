@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   import.h                                           :+:      :+:    :+:   */
+/*   init_free_data_file.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 17:31:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 12:25:04 by lazanett         ###   ########.fr       */
+/*   Created: 2024/03/21 17:38:06 by lazanett          #+#    #+#             */
+/*   Updated: 2024/03/21 18:16:23 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMPORT_H
-# define IMPORT_H
+#include "./../../Header/cub3d.h"
 
-# include "./constante.h"
+int	init_data_file(t_error_code *err, t_data_file **file)
+{
+	if (!err || !file || *err != ERR_NULL)
+		return (1);
+	*file = ft_calloc(1, sizeof(t_data_file));
+	if (!(*file))
+		return (*err = ERR_MALLOC, 1);
+	return (0);
+}
 
-# include "./../Library/minilibx-linux/mlx.h"
-
-# include <unistd.h>
-
-# include <stdio.h>
-
-# include <stdlib.h>
-
-# include <stdbool.h>
-
-# include <fcntl.h>
-
-# include <errno.h>
-
-# include <math.h>
-
-# include <X11/X.h>
-
-# include <X11/keysym.h>
-
-#endif
+void	free_data_file(t_data_file **file)
+{
+	if (!file|| !*file)
+		return ;
+	free(*file);
+}

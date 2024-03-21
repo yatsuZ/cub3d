@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 11:59:52 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:32:09 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,17 @@ typedef struct s_data_file
 {
 	void			*mlx;
 	void			*win;
+	long			sizex;
+	long			sizey;
 
+	int				up;
+	int				down;
+	int				left;
+	int				right;
+	int				esc;
+
+
+	
 	char			*north;
 	char			*south;
 	char			*west;

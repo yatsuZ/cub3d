@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   constante.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:37:43 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/21 16:50:31 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ typedef enum e_error_code
 	ERR_REDUNDANCE_SPAWN,
 	ERR_MISSING_MAP,
 	ERR_MISSING_SPAWN,
+	ERR_INIT_LIBX,
+	ERR_WIN_LIBX,
+
 }	t_error_code;
 
 typedef enum e_extension_file
