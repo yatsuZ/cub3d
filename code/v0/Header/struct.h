@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 18:32:09 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:56:20 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ typedef struct s_cellule
 
 typedef struct s_world_data
 {
-	t_cardinal		start_angle;
-	t_cellule		*map;
-	t_xy			spawn;
+	t_cardinal		start_angle; // repere quell pos il a 
+	t_cellule		*map; // carte
+	t_xy			spawn; // camera/joueur
 }	t_world_data ;
 
 typedef struct s_file_cub
@@ -57,21 +57,27 @@ typedef struct s_file_cub
 	int		start_map;
 }	t_file_cub;
 
-typedef struct s_data_file
+typedef struct s_minilibx
 {
 	void			*mlx;
 	void			*win;
 	long			sizex;
 	long			sizey;
+}	t_minilibx;
 
+typedef struct s_data_file
+{
+	///-----KEY-----///
 	int				up;
 	int				down;
 	int				left;
 	int				right;
 	int				esc;
 
+	t_xy			raydir;
+	t_xy			rayplane;
+	t_xy			campos;
 
-	
 	char			*north;
 	char			*south;
 	char			*west;
@@ -131,6 +137,7 @@ typedef struct s_all_data
 	t_all_texture	*textures;
 	t_world_data	*world;
 	t_data_file		*file;
+	t_minilibx		*mini;
 }	t_all_data;
 
 typedef struct s_img

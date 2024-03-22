@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_free_all.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:50:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/03/22 11:36:20 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	free_all(t_all_data **all)
 	free_world(&(*all)->world);
 	free_all_texture(&(*all)->textures);
 	free_file_cub(&((*all)->fcb));
+	free_data_file(&(*all)->file);
 	free(*all);
 	*all = NULL;
 }

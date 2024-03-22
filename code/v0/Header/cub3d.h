@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 18:58:54 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:59:18 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,9 @@ int		key_press(int keycode, t_all_data *all);
 int		key_drop(int keycode, t_all_data *all);
 int		ft_key(int keycode, t_all_data *all);
 int		escape(t_all_data *all);
-
+int		init_minilibx(t_error_code *err, t_minilibx **mini);
+void	free_minilibx(t_minilibx **mini);
+void	init_orient(t_all_data *all);
 
 // MAIN
 int	end(t_all_data *all);
