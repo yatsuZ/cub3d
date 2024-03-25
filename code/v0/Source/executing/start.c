@@ -6,27 +6,26 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/22 18:00:10 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/25 14:28:23 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-t_error_code	start_exec(t_all_data **all) {
+t_error_code	start_exec(t_all_data *all) {
 
-	init_data_file(&(*all)->err, &(*all)->file);
-	init_minilibx(&(*all)->err, &(*all)->mini);
-	init_orient((*all));
-	(*all)->mini->mlx = mlx_init();
-	if ((*all)->mini->mlx == NULL)
+	init_orient(all);
+	all->mini->mlx = mlx_init();
+	if (all->mini->mlx == NULL)
 		return  ERR_INIT_LIBX;
-	screen_size(*all);
-	(*all)->mini->win = mlx_new_window((*all)->mini->mlx, (*all)->mini->sizex, (*all)->mini->sizey, "Cub3D");
-	if ((*all)->mini->win == NULL)
+	screen_size(all);
+	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, all->mini->sizey, "Cub3D");
+	if (all->mini->win == NULL)
 		return ERR_WIN_LIBX;
-	mlx_hook((*all)->mini->win, 3, KeyReleaseMask, &key_drop, (*all)->file); // revoir pour les deplacements prolonges.
-	mlx_hook((*all)->mini->win, ClientMessage, 1L << 5, escape, (*all)->file);
-	mlx_loop((*all)->mini->mlx);
+	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
+	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
+	mlx_hook(all->mini->win, ClientMessage, 1L << 5, escape, all->file);
+	mlx_loop(all->mini->mlx);
 	return ERR_NULL;
 }
 

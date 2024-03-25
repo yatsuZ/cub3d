@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:38:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/21 18:16:23 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:15:28 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	init_data_file(t_error_code *err, t_data_file **file)
 {
-	if (!err || !file || *err != ERR_NULL)
+	if (!err || *err != ERR_NULL)
 		return (1);
 	*file = ft_calloc(1, sizeof(t_data_file));
 	if (!(*file))
@@ -22,9 +22,9 @@ int	init_data_file(t_error_code *err, t_data_file **file)
 	return (0);
 }
 
-void	free_data_file(t_data_file **file)
+void	free_data_file(t_data_file *file)
 {
-	if (!file|| !*file)
+	if (!file)
 		return ;
-	free(*file);
+	free(file);
 }

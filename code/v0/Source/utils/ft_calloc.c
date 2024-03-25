@@ -6,13 +6,13 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:54:45 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/22 17:23:14 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/25 11:34:42 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-static void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*cast;
 

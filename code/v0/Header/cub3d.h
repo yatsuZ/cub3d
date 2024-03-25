@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/22 17:59:18 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:50:35 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ t_element_map
 
 // OLD FT UTILS
 
+void	*ft_memset(void *s, int c, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
 size_t		ft_strlen(const char *cha);
 bool		ft_strcmp(char *s1, char *s2, long size);
@@ -102,12 +103,12 @@ void		show_world(t_world_data *w);
 void		show_cellule(t_cellule *c);
 
 // EXECUTING
-t_error_code	start_exec(t_all_data **all);
+t_error_code	start_exec(t_all_data *all);
 int		init_data_file(t_error_code *err, t_data_file **file);
-void	free_data_file(t_data_file **file);
+void	free_data_file(t_data_file *file);
 void	screen_size(t_all_data *all);
-int		key_press(int keycode, t_all_data *all);
-int		key_drop(int keycode, t_all_data *all);
+int		key_press(int keycode, t_data_file *all);
+int		key_drop(int keycode, t_data_file *all);
 int		ft_key(int keycode, t_all_data *all);
 int		escape(t_all_data *all);
 int		init_minilibx(t_error_code *err, t_minilibx **mini);
