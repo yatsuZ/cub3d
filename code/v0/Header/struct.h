@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/26 10:22:40 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 14:03:38 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,26 @@ typedef struct s_file_cub
 	int		start_map;
 }	t_file_cub;
 
+typedef struct s_img
+{
+	void	*image;
+	char	*addr;
+	int		bitpp;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
+}	t_img;
+
 typedef struct s_minilibx
 {
 	void			*mlx;
 	void			*win;
 	long			sizex;
 	long			sizey;
-}	t_minilibx;
+	t_img			img_mlx;
 
-typedef struct s_img
-{
-	void	*image;
-	int		*addr;
-	int		pixel_bits;
-	int		size_line;
-	int		endian;
-	int		width;
-	int		height;
-}	t_img;
+}	t_minilibx;
 
 typedef struct s_data_file
 {
@@ -90,7 +92,7 @@ typedef struct s_data_file
 	t_xy			campos;
 
 	t_img			img[4];
-
+	
 
 	char			*north;
 	char			*south;

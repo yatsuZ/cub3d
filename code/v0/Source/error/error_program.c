@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/25 16:29:53 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:54:54 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	show_end2(t_error_code err)
 	else if (err == ERR_INIT_LIBX)
 		printf("ERROR: Minilibx init failed\n");
 	else if (err ==	ERR_WIN_LIBX)
-		printf("ERROR: Minilibx init window failed\n");
+		printf("ERROR: Minilibx window failed\n");
 	else if (err == ERR_XPM_TO_IMG)
 		printf("ERROR: invalid image\n");
 }

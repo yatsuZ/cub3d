@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/26 11:13:05 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:43:27 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,15 +119,23 @@ void		show_world(t_world_data *w);
 void		show_cellule(t_cellule *c);
 
 // EXECUTING
+//----start.c
 t_error_code	start_exec(t_all_data *all);
-
 void	screen_size(t_all_data *all);
+
+//----key.c
 int		key_press(int keycode, t_data_file *all);
 int		key_drop(int keycode, t_data_file *all);
 int		ft_key(int keycode, t_all_data *all);
 int		escape(t_all_data *all);
+
+//----init_orientation.c
 void	init_orient(t_all_data *all);
-t_error_code	convertion_image(t_all_data *all);
+
+//----conv_texture.c
+int		convertion_image(t_all_data *all);
+int		get_adress_img(t_all_data *all);
+void	img_pix_put(t_img *img, int x, int y, int color);
 void	free_image(t_all_data *all);
 
 // MAIN

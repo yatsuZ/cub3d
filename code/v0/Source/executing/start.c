@@ -6,22 +6,32 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/26 10:35:53 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 14:05:36 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-t_error_code	start_exec(t_all_data *all) {
-
+t_error_code	start_exec(t_all_data *all)
+{
 	all->mini->mlx = mlx_init();
 	if (all->mini->mlx == NULL)
 		return  ERR_INIT_LIBX;
 	init_orient(all);
-	convertion_image(all);
+	if (convertion_image(all))
+		return ERR_XPM_TO_IMG;
 	screen_size(all);
 	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, all->mini->sizey, "Cub3D");
 	if (all->mini->win == NULL)
+		return ERR_WIN_LIBX;
+	all->mini->img_mlx.image = mlx_new_image(all->mini->mlx, all->mini->sizex, \
+				all->mini->sizey);
+	if (!(all->mini->img_mlx.image))
+		return ERR_WIN_LIBX;
+	all->mini->img_mlx.addr = mlx_get_data_addr(all->mini->img_mlx.image, \
+		&all->mini->img_mlx.bitpp, &all->mini->img_mlx.line_length, \
+		&all->mini->img_mlx.endian);
+	if (!(all->mini->img_mlx.addr))
 		return ERR_WIN_LIBX;
 	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
 	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
