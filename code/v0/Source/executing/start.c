@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/25 14:28:23 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:35:53 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 t_error_code	start_exec(t_all_data *all) {
 
-	init_orient(all);
 	all->mini->mlx = mlx_init();
 	if (all->mini->mlx == NULL)
 		return  ERR_INIT_LIBX;
+	init_orient(all);
+	convertion_image(all);
 	screen_size(all);
 	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, all->mini->sizey, "Cub3D");
 	if (all->mini->win == NULL)

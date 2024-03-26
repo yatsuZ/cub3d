@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/25 12:50:35 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:13:05 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,22 @@ int				init_all_cellules(t_cellule **cellule, char **txt, t_xy p, t_error_code *
 void			free_all_cellules(t_cellule **cellule);
 t_error_code	for_each_cellule(t_cellule *c, t_world_data *w, \
 t_error_code (*f)(t_cellule *, t_world_data *));
+
+//------------ STRUCT : IMG
+
+int		init_img(t_error_code *err, t_img **img);
+void	free_img(t_img *img);
+
+//------------ STRUCT : DATA_FILE
+
+int		init_data_file(t_error_code *err, t_data_file **file);
+void	free_data_file(t_data_file *file);
+
+//------------ STRUCT : MINILIBX
+
+int		init_minilibx(t_error_code *err, t_minilibx **mini);
+void	free_minilibx(t_all_data *all, t_minilibx **mini);
+
 
 // FT FOR PARSSING
 
@@ -104,16 +120,15 @@ void		show_cellule(t_cellule *c);
 
 // EXECUTING
 t_error_code	start_exec(t_all_data *all);
-int		init_data_file(t_error_code *err, t_data_file **file);
-void	free_data_file(t_data_file *file);
+
 void	screen_size(t_all_data *all);
 int		key_press(int keycode, t_data_file *all);
 int		key_drop(int keycode, t_data_file *all);
 int		ft_key(int keycode, t_all_data *all);
 int		escape(t_all_data *all);
-int		init_minilibx(t_error_code *err, t_minilibx **mini);
-void	free_minilibx(t_minilibx **mini);
 void	init_orient(t_all_data *all);
+t_error_code	convertion_image(t_all_data *all);
+void	free_image(t_all_data *all);
 
 // MAIN
 int	end(t_all_data *all);

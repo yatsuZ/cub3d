@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/25 13:16:06 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:13:46 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	init_all(t_all_data **all, char *path_file)
 	init_world((*all)->fcb, &(*all)->err, &(*all)->world);
 	init_data_file(&(*all)->err, &(*all)->file);
 	init_minilibx(&(*all)->err, &(*all)->mini);
+	init_img(&(*all)->err, &(*all)->img);
 	return (!((*all)->err == ERR_NULL));
 }
 
@@ -36,7 +37,8 @@ void	free_all(t_all_data **all)
 	free_all_texture(&(*all)->textures);
 	free_file_cub(&((*all)->fcb));
 	free_data_file((*all)->file);
-	free_minilibx(&(*all)->mini);
+	free_minilibx((*all), &(*all)->mini);
+	free_img((*all)->img);
 	free(*all);
 	*all = NULL;
 }

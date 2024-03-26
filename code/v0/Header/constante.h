@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 16:50:31 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/25 16:28:21 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef enum e_error_code
 	ERR_MISSING_SPAWN,
 	ERR_INIT_LIBX,
 	ERR_WIN_LIBX,
+	ERR_XPM_TO_IMG,
 
 }	t_error_code;
 

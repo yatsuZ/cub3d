@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/25 14:26:12 by lazanett         ###   ########.fr        #
+#    Updated: 2024/03/25 17:26:15 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ STRUCT_FILES =	init_free_all_texture.c	\
 				init_free_world.c		\
 				init_free_minilibx.c	\
 				init_free_data_file.c	\
+				init_free_img.c			\
 
 UTILS_PATH  =	utils/
 UTILS_FILES =	ft_calloc.c	\
@@ -52,7 +53,7 @@ EXEC_PATH  =	executing/
 EXEC_FILES =	start.c	\
 				key.c\
 				init_orientation.c\
-				
+				conv_texture.c\
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/22 17:56:20 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/26 10:22:40 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ typedef struct s_xy
 
 typedef struct s_all_texture
 {
-	char			*n_wall;
-	char			*s_wall;
-	char			*e_wall;
-	char			*w_wall;
+	char			*n_wall; // path
+	char			*s_wall; // path
+	char			*e_wall;// path
+	char			*w_wall;// path
 	unsigned long	*floor_color;
 	unsigned long	*ceiling_color;
 }	t_all_texture;
@@ -65,6 +65,17 @@ typedef struct s_minilibx
 	long			sizey;
 }	t_minilibx;
 
+typedef struct s_img
+{
+	void	*image;
+	int		*addr;
+	int		pixel_bits;
+	int		size_line;
+	int		endian;
+	int		width;
+	int		height;
+}	t_img;
+
 typedef struct s_data_file
 {
 	///-----KEY-----///
@@ -78,10 +89,15 @@ typedef struct s_data_file
 	t_xy			rayplane;
 	t_xy			campos;
 
+	t_img			img[4];
+
+
 	char			*north;
 	char			*south;
 	char			*west;
 	char			*east;
+
+	
 	unsigned long	floor;
 	unsigned long	ceiling;
 	bool			floor_set;
@@ -101,7 +117,6 @@ typedef struct s_data_file
 	int				move_x;
 	int				move_y;
 	int				rotate;
-	void			**img;
 	int				**addr_img;
 	int				pixel_bits[6];
 	int				size_line[6];
@@ -138,18 +153,7 @@ typedef struct s_all_data
 	t_world_data	*world;
 	t_data_file		*file;
 	t_minilibx		*mini;
+	t_img			*img;
 }	t_all_data;
-
-typedef struct s_img
-{
-	void	*img;
-	int		*addr;
-	int		pixel_bits;
-	int		size_line;
-	int		endian;
-}	t_img;
-
-
-
 
 #endif
