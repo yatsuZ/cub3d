@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/26 13:43:27 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:17:00 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,23 @@ int		convertion_image(t_all_data *all);
 int		get_adress_img(t_all_data *all);
 void	img_pix_put(t_img *img, int x, int y, int color);
 void	free_image(t_all_data *all);
+
+//----raycasting.c
+void	raycasting(t_all_data *all);
+double	conv_neg(double n);
+
+//----raycasting_utils.c
+void	init_dda(t_all_data *all, int i);
+void	calcul_delta(t_all_data *all);
+void	perform_dda(t_all_data *all);
+void	handle_no_colision(t_all_data *all);
+void	limit_wall_height(t_all_data *all);
+
+//----texture.c
+t_img	get_texture(t_all_data *all);
+
+//----wall.c
+void	draw_wall(t_all_data *all);
 
 // MAIN
 int	end(t_all_data *all);

@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/25 17:26:15 by lazanett         ###   ########.fr        #
+#    Updated: 2024/03/27 18:10:25 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,11 @@ UTILS_FILES =	ft_calloc.c	\
 
 EXEC_PATH  =	executing/
 EXEC_FILES =	start.c	\
-				key.c\
-				init_orientation.c\
-				conv_texture.c\
+				key.c	\
+				init_orientation.c	\
+				conv_texture.c	\
+				raycasting.c	\
+				raycasting_utils.c	\
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\

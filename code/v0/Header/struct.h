@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/26 14:03:38 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/03/29 13:59:39 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct s_xy
 	long	x;
 	long	y;
 }	t_xy;
+
+typedef struct s_xyd
+{
+	double	x;
+	double	y;
+}	t_xyd;
 
 typedef struct s_all_texture
 {
@@ -85,66 +91,34 @@ typedef struct s_data_file
 	int				down;
 	int				left;
 	int				right;
+	int				aleft;
+	int				aright;
 	int				esc;
 
-	t_xy			raydir;
-	t_xy			rayplane;
-	t_xy			campos;
-
-	t_img			img[4];
+	t_xyd			raydir; //init
+	t_xyd			rayplane;//init
+	t_xyd			campos; // init
+	t_xyd			camera;
+	t_xyd			dir;
+	t_xyd			map;
+	t_xyd			delta;
+	t_xyd			step;
+	t_xyd			sidedist;
 	
-
-	char			*north;
-	char			*south;
-	char			*west;
-	char			*east;
-
-	
-	unsigned long	floor;
-	unsigned long	ceiling;
-	bool			floor_set;
-	bool			ceiling_set;
-
-	char			**map;
-	char			**file;
-	int				nbr_line;
-	char			dir;
-	double			pos_player_x;
-	double			pos_player_y;
-	double			dir_player_x;
-	double			dir_player_y;
-	double			plane_x;
-	double			plane_y;
-	int				has_moved;
-	int				move_x;
-	int				move_y;
-	int				rotate;
-	int				**addr_img;
-	int				pixel_bits[6];
-	int				size_line[6];
-	int				endian[6];
-	double			camera_x;
-	double			dir_ray_x;
-	double			dir_ray_y;
-	int				map_x;
-	int				map_y;
-	double			deltadist_x;
-	double			deltadist_y;
-	int				step_x;
-	int				step_y;
-	double			sidedist_x;
-	double			sidedist_y;
-	int				side;
-	double			wall_dist;
+	double			distwall;
 	int				line_height;
-	int				draw_start;
-	int				draw_end;
-	int				texture_dir;
+	int				hit;
+	int				side;
+	int				drawstart;
+	int				drawend;
+	char			**mapp;
+	t_img			img[4];
+
 	double			wall_x;
-	double			step;
-	int				texx;
-	int				texy;
-	int				texpos;
+	int				textX;
+	int				textY;
+	double			textStep;
+	double			textPos;
 }	t_data_file;
 
 typedef struct s_all_data
