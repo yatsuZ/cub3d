@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/03/27 18:10:25 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/04 15:37:34 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ STRUCT_FILES =	init_free_all_texture.c	\
 				init_free_minilibx.c	\
 				init_free_data_file.c	\
 				init_free_img.c			\
+				init_free_color.c		\
+				init_free_tex.c			\
 
 UTILS_PATH  =	utils/
 UTILS_FILES =	ft_calloc.c	\
@@ -52,10 +54,14 @@ UTILS_FILES =	ft_calloc.c	\
 EXEC_PATH  =	executing/
 EXEC_FILES =	start.c	\
 				key.c	\
+				move.c	\
 				init_orientation.c	\
 				conv_texture.c	\
 				raycasting.c	\
 				raycasting_utils.c	\
+				texture.c	\
+				vision.c	\
+				wall.c	\
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\
@@ -79,7 +85,7 @@ HEADER = ./Header
 
 RM = @rm -f -rf
 CC = cc
-C_FLAGS = -g3 -Wall -Wextra -Werror -g
+C_FLAGS = -g3 -Wall -Wextra -Werror
 
 PROGRAM_NAME = cub3D
 

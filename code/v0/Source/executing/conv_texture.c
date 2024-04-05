@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:02:25 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/26 13:45:49 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:33:39 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ int	convertion_image(t_all_data *all)
 		return (1);
 	all->img->width = 64;
 	all->img->height = 64;
-	all->file->img[NORTH].image = mlx_xpm_file_to_image(all->mini->mlx, \
+	all->file->img[NORTHH].image = mlx_xpm_file_to_image(all->mini->mlx, \
 			all->textures->n_wall, &all->img->width, &all->img->height);
-	if (!all->file->img[NORTH].image)
+	if (!all->file->img[NORTHH].image)
 		return (1);
-	all->file->img[SOUTH].image = mlx_xpm_file_to_image(all->mini->mlx, \
+	all->file->img[SOUTHH].image = mlx_xpm_file_to_image(all->mini->mlx, \
 			all->textures->s_wall,&all->img->width, &all->img->height);
-	if (!all->file->img[SOUTH].image)
+	if (!all->file->img[SOUTHH].image)
 		return (1);
-	all->file->img[WEST].image = mlx_xpm_file_to_image(all->mini->mlx, \
+	all->file->img[WESTT].image = mlx_xpm_file_to_image(all->mini->mlx, \
 			all->textures->n_wall, &all->img->width, &all->img->height);
-	if (!all->file->img[WEST].image)
+	if (!all->file->img[WESTT].image)
 		return (1);
-	all->file->img[EAST].image = mlx_xpm_file_to_image(all->mini->mlx, \
+	all->file->img[EASTT].image = mlx_xpm_file_to_image(all->mini->mlx, \
 			all->textures->n_wall, &all->img->width, &all->img->height);
-	if (!all->file->img[EAST].image)
+	if (!all->file->img[EASTT].image)
 		return (1);
 	if (get_adress_img(all))
 		return (1);
@@ -44,45 +44,39 @@ int	get_adress_img(t_all_data *all)
 {
 	if (all == NULL || all->img == NULL)
 		return (1);
-	all->file->img[NORTH].addr = mlx_get_data_addr(\
-			all->file->img[NORTH].image, &all->file->img[NORTH].bitpp, \
-			&all->file->img[NORTH].line_length, &all->file->img[NORTH].endian);
-	if (!all->file->img[NORTH].addr)
+	all->file->img[NORTHH].addr = mlx_get_data_addr(\
+			all->file->img[NORTHH].image, &all->file->img[NORTHH].bitpp, \
+			&all->file->img[NORTHH].line_length, &all->file->img[NORTHH].endian);
+	if (!all->file->img[NORTHH].addr)
 		return (1);
-	all->file->img[SOUTH].addr = mlx_get_data_addr(\
-			all->file->img[SOUTH].image, &all->file->img[SOUTH].bitpp, \
-			&all->file->img[SOUTH].line_length, &all->file->img[SOUTH].endian);
-	if (!all->file->img[SOUTH].addr)
+	all->file->img[SOUTHH].addr = mlx_get_data_addr(\
+			all->file->img[SOUTHH].image, &all->file->img[SOUTHH].bitpp, \
+			&all->file->img[SOUTHH].line_length, &all->file->img[SOUTHH].endian);
+	if (!all->file->img[SOUTHH].addr)
 		return (1);
-	all->file->img[EAST].addr = mlx_get_data_addr(\
-			all->file->img[EAST].image, &all->file->img[EAST].bitpp, \
-			&all->file->img[EAST].line_length, &all->file->img[EAST].endian);
-	if (!all->file->img[EAST].addr)
+	all->file->img[EASTT].addr = mlx_get_data_addr(\
+			all->file->img[EASTT].image, &all->file->img[EASTT].bitpp, \
+			&all->file->img[EASTT].line_length, &all->file->img[EASTT].endian);
+	if (!all->file->img[EASTT].addr)
 		return (1);
-	all->file->img[WEST].addr = mlx_get_data_addr(\
-			all->file->img[WEST].image, &all->file->img[WEST].bitpp, \
-			&all->file->img[WEST].line_length, &all->file->img[WEST].endian);
-	if (!all->file->img[WEST].addr)
+	all->file->img[WESTT].addr = mlx_get_data_addr(\
+			all->file->img[WESTT].image, &all->file->img[WESTT].bitpp, \
+			&all->file->img[WESTT].line_length, &all->file->img[WESTT].endian);
+	if (!all->file->img[WESTT].addr)
 		return (1);
 	return (0);
 }
 
-void	img_pix_put(t_img *img, int x, int y, int color)
-{
-	char	*pixel;
-
-	pixel = img->addr + ((y * img->line_length) + (x * (img->bitpp / 8)));
-	*(int *)pixel = color;
-}
-
 void	free_image(t_all_data *all)
 {
-	if (all->file->img[NORTH].image)
-		mlx_destroy_image(all->mini->mlx, all->file->img[NORTH].image);
-	if (all->file->img[SOUTH].image)
-		mlx_destroy_image(all->mini->mlx, all->file->img[SOUTH].image);
-	if (all->file->img[WEST].image)
-		mlx_destroy_image(all->mini->mlx, all->file->img[WEST].image);
-	if (all->file->img[EAST].image)
-		mlx_destroy_image(all->mini->mlx, all->file->img[EAST].image);
+	if (!all->mini->mlx)
+		return ;
+	if (all->file->img[NORTHH].image)
+		mlx_destroy_image(all->mini->mlx, all->file->img[NORTHH].image);
+	if (all->file->img[SOUTHH].image)
+		mlx_destroy_image(all->mini->mlx, all->file->img[SOUTHH].image);
+	if (all->file->img[WESTT].image)
+		mlx_destroy_image(all->mini->mlx, all->file->img[WESTT].image);
+	if (all->file->img[EASTT].image)
+		mlx_destroy_image(all->mini->mlx, all->file->img[EASTT].image);
 }

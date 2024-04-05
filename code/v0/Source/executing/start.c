@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/26 14:05:36 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:12:47 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 t_error_code	start_exec(t_all_data *all)
 {
+	printf("%ld   |   %ld\n", all->world->spawn.x, all->world->spawn.y);
 	all->mini->mlx = mlx_init();
 	if (all->mini->mlx == NULL)
 		return  ERR_INIT_LIBX;
-	init_orient(all);
+	if (!init_orient(all))
+		return ERR_TEX;
 	if (convertion_image(all))
 		return ERR_XPM_TO_IMG;
 	screen_size(all);
@@ -33,11 +35,20 @@ t_error_code	start_exec(t_all_data *all)
 		&all->mini->img_mlx.endian);
 	if (!(all->mini->img_mlx.addr))
 		return ERR_WIN_LIBX;
+	mlx_loop_hook(all->mini->mlx, ft_game, all);
 	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
 	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
 	mlx_hook(all->mini->win, ClientMessage, 1L << 5, escape, all->file);
 	mlx_loop(all->mini->mlx);
 	return ERR_NULL;
+}
+
+int	ft_game(t_all_data *all)
+{
+	ft_key(all);
+	draw_void(all);
+	raycasting(all);
+	return (0);
 }
 
 void	screen_size(t_all_data *all)

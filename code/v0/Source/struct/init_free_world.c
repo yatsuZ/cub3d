@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_free_world.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:49:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 01:08:55 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/05 13:27:36 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	init_world(t_file_cub *fcb, t_error_code *err, t_world_data **world)
 	(*world)->spawn.x = -1;
 	(*world)->spawn.y = -1;
 	(*world)->start_angle = IDK;
+	(*world)->initial_angle = 0;
 	(*world)->map = NULL;
 	if (is_a_legit_syntaxe_map(fcb->contained_by_line, fcb->start_map) == false)
 		return (*err = ERR_BAD_SYNTAXE_MAP);
@@ -67,6 +68,7 @@ int	init_world(t_file_cub *fcb, t_error_code *err, t_world_data **world)
 	*err = for_each_cellule((*world)->map, (*world), legit_map);
 	if (*err == ERR_NULL && (*world)->start_angle == IDK)
 		*err = ERR_MISSING_SPAWN;
+	(*world)->spawn.x = (*world)->spawn.x - fcb->start_map;
 	return (*err != ERR_NULL);
 }
 

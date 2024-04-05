@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_element.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 23:20:36 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:38:03 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/04 17:17:33 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,26 @@ t_error_code	verif_element_spawn(t_cellule *c, t_world_data *w)
 	if (w->start_angle != IDK)
 		return (ERR_REDUNDANCE_SPAWN);
 	else if (c->element == SPAWN_N)
+	{
 		w->start_angle = NORTH;
+		w->initial_angle = 'N';
+	}
 	else if (c->element == SPAWN_S)
+	{
 		w->start_angle = SOUTH;
+		w->initial_angle = 'S';
+	}
 	else if (c->element == SPAWN_E)
+	{
 		w->start_angle = EAST;
+		w->initial_angle = 'E';
+	}
 	else if (c->element == SPAWN_W)
+	{
 		w->start_angle = WEST;
+		w->initial_angle = 'W';
+	}
 	w->spawn = c->position;
 	return (verif_element_floor(c));
 }
+

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_free_img.c                                    :+:      :+:    :+:   */
+/*   init_free_tex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:17:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:58 by lazanett         ###   ########.fr       */
+/*   Created: 2024/04/04 14:29:17 by lazanett          #+#    #+#             */
+/*   Updated: 2024/04/04 15:03:49 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-int	init_img(t_error_code *err, t_img **img)
-{
+int	init_tex(t_error_code *err, t_tex **tex) {
 	if (!err || *err != ERR_NULL)
 		return (1);
-	*img = ft_calloc(1, sizeof(t_img));
-	if (!(*img))
+	*tex = ft_calloc(1, sizeof(t_tex));
+	if (!(*tex))
 		return (*err = ERR_MALLOC, 1);
-	ft_memset(*img, 0, sizeof(t_img));
-	(*img)->image = NULL;
-	(*img)->addr = NULL;
-	
+	ft_memset(*tex, 0, sizeof(t_tex)); // Utilisation correcte de ft_memset
+	(*tex)->color = NULL;
 	return (0);
 }
 
-void	free_img(t_img *img)
+void	free_tex(t_tex *tex)
 {
-	if (!img)
+	if (!tex)
 		return ;
-	free(img);
+	free(tex);
 }

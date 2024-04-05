@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/29 12:17:00 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:31:36 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,22 @@ void	free_img(t_img *img);
 //------------ STRUCT : DATA_FILE
 
 int		init_data_file(t_error_code *err, t_data_file **file);
-void	free_data_file(t_data_file *file);
+void	free_data_file(t_all_data *all);
+t_error_code	alloc_mapp(t_all_data *all);
 
 //------------ STRUCT : MINILIBX
 
 int		init_minilibx(t_error_code *err, t_minilibx **mini);
 void	free_minilibx(t_all_data *all, t_minilibx **mini);
 
+//------------ STRUCT : COLOR
+int		init_color(t_error_code *err, t_color **rgb);
+void	free_color(t_color *rgb);
 
+
+//------------ STRUCT : TEX
+int	init_tex(t_error_code *err, t_tex **tex);
+void	free_tex(t_tex *tex);
 // FT FOR PARSSING
 
 t_error_code	check_is_file_and_extension(char *arg, t_extension_file option);
@@ -121,21 +129,28 @@ void		show_cellule(t_cellule *c);
 // EXECUTING
 //----start.c
 t_error_code	start_exec(t_all_data *all);
+int		ft_game(t_all_data *all);
 void	screen_size(t_all_data *all);
 
 //----key.c
 int		key_press(int keycode, t_data_file *all);
 int		key_drop(int keycode, t_data_file *all);
-int		ft_key(int keycode, t_all_data *all);
+int		ft_key(t_all_data *all);
 int		escape(t_all_data *all);
 
+//----move.c
+void	go_straight(t_all_data *all);
+void	go_back(t_all_data *all);
+void	go_left(t_all_data *all);
+void	go_right(t_all_data *all);
+bool	is_dir(char c);
+
 //----init_orientation.c
-void	init_orient(t_all_data *all);
+int		init_orient(t_all_data *all);
 
 //----conv_texture.c
 int		convertion_image(t_all_data *all);
 int		get_adress_img(t_all_data *all);
-void	img_pix_put(t_img *img, int x, int y, int color);
 void	free_image(t_all_data *all);
 
 //----raycasting.c
@@ -149,11 +164,24 @@ void	perform_dda(t_all_data *all);
 void	handle_no_colision(t_all_data *all);
 void	limit_wall_height(t_all_data *all);
 
+//----raycasting.c
+void	raycasting(t_all_data *all);
+double	conv_neg(double n);
+
 //----texture.c
-t_img	get_texture(t_all_data *all);
+t_img	get_texture_tab(t_all_data *all);
+int		rbg_hexa(t_all_data *all, int i);
+void	img_pix_put(t_img *img, int x, int y, unsigned long color);
+
+//----vision.c
+void	vision_left(t_all_data *all);
+void	vision_right(t_all_data *all);
 
 //----wall.c
-void	draw_wall(t_all_data *all);
+void	draw_wall(t_all_data *all, int j);
+t_tex	init_draw_wall(t_all_data *all);
+void	draw_void(t_all_data *all);
+double	get_wallX(t_all_data *all);
 
 // MAIN
 int	end(t_all_data *all);

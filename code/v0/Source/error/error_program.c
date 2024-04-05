@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/26 13:54:54 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/03 16:57:21 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ static void	show_end2(t_error_code err)
 		printf("ERROR: Minilibx window failed\n");
 	else if (err == ERR_XPM_TO_IMG)
 		printf("ERROR: invalid image\n");
+	else if (err == ERR_TEX)
+		printf("ERROR: invalid texture\n");
+	else if (err == ERR_SIZE_MALLOC)
+		printf("ERROR: size malloc invalid\n");
 }
 
 void	show_end(t_error_code err)

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:09:45 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/28 16:15:50 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:34:56 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,12 @@ void	init_dda(t_all_data *all, int i)
 		* all->file->camera.x);
 	all->file->dir.y = all->file->raydir.y + (all->file->rayplane.y \
 		* all->file->camera.x);
-	all->file->map.x = (int)all->file->campos.x;
+	//printf("---%f | %f\n", all->file->campos.x, all->file->campos.y);
+	all->file->map.x = (int)all->file->campos.x; 
 	all->file->map.y = (int)all->file->campos.y;
+	// all->file->map.x = (int)all->world->spawn.x;
+	// all->file->map.y = (int)all->world->spawn.y;
+	printf("%f | %f\n", all->file->map.x, all->file->map.y);
 	all->file->hit = 0;
 }
 
@@ -98,9 +102,11 @@ void	handle_no_colision(t_all_data *all)
 			all->file->map.y += all->file->step.y;
 			all->file->side = 1;
 		}
-		if ((all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) > 0 \
-			&& (all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) \
-			!= all->world->start_angle)
+		if (!all->file->mapp)
+			printf("mapp vide\n");
+		// if (!all->file->map.y || all->file->map.x)
+		// 	printf("pos vide\n");
+		if ((all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) > 0)//
 			all->file->hit = 1;
 	}
 }

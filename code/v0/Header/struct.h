@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/29 13:59:39 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:43:45 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ typedef struct s_xyd
 
 typedef struct s_all_texture
 {
-	char			*n_wall; // path
-	char			*s_wall; // path
-	char			*e_wall;// path
-	char			*w_wall;// path
+	char			*n_wall;
+	char			*s_wall;
+	char			*e_wall;
+	char			*w_wall;
 	unsigned long	*floor_color;
 	unsigned long	*ceiling_color;
 }	t_all_texture;
@@ -49,9 +49,10 @@ typedef struct s_cellule
 
 typedef struct s_world_data
 {
-	t_cardinal		start_angle; // repere quell pos il a 
-	t_cellule		*map; // carte
-	t_xy			spawn; // camera/joueur
+	t_cardinal		start_angle;
+	char			initial_angle;
+	t_cellule		*map;
+	t_xy			spawn;
 }	t_world_data ;
 
 typedef struct s_file_cub
@@ -74,6 +75,22 @@ typedef struct s_img
 	int		height;
 }	t_img;
 
+typedef struct s_color
+{
+	unsigned long	*path;
+}	t_color;
+
+typedef struct s_tex
+{
+	t_img		texture;
+	double			wall_x;
+	int				textX;
+	int				textY;
+	double			textStep;
+	double			textPos;
+	char			*color;
+}	t_tex;
+
 typedef struct s_minilibx
 {
 	void			*mlx;
@@ -95,9 +112,9 @@ typedef struct s_data_file
 	int				aright;
 	int				esc;
 
-	t_xyd			raydir; //init
-	t_xyd			rayplane;//init
-	t_xyd			campos; // init
+	t_xyd			raydir;
+	t_xyd			rayplane;
+	t_xyd			campos;
 	t_xyd			camera;
 	t_xyd			dir;
 	t_xyd			map;
@@ -113,12 +130,8 @@ typedef struct s_data_file
 	int				drawend;
 	char			**mapp;
 	t_img			img[4];
+	t_color			rgb[2];
 
-	double			wall_x;
-	int				textX;
-	int				textY;
-	double			textStep;
-	double			textPos;
 }	t_data_file;
 
 typedef struct s_all_data
@@ -130,6 +143,8 @@ typedef struct s_all_data
 	t_data_file		*file;
 	t_minilibx		*mini;
 	t_img			*img;
+	t_color			*color;
+	t_tex			*tex;
 }	t_all_data;
 
 #endif

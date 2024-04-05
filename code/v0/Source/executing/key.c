@@ -6,32 +6,31 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:35:58 by lazanett          #+#    #+#             */
-/*   Updated: 2024/03/26 14:35:40 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:46:25 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-int	ft_key(int keycode, t_all_data *all)
+int	ft_key(t_all_data *all)
 {
-	(void) all;
-	if (keycode == XK_Escape)
-	{
-		//end(all);
-		exit(0);
-	}
-	// if (keycode == XK_Up || keycode == XK_w)
-	// 	file->up = 1;
-	// if (keycode == XK_Down || keycode == XK_s)
-	// 	file->down = 1;
-	// if (keycode == XK_a)
-	// 	file->left = 1;
-	// if (keycode == XK_Left)
-	// 	file->aleft = 1;
-	// if (keycode == XK_d)
-	// 	file->right = 1;
-	// if (keycode == XK_Right)
-	// 	file->aright = 1;
+	// if (keycode == XK_Escape)
+	// {
+	// 	//end(all);
+	// 	exit(0);
+	// }
+	if (all->file->up == 1)
+		go_straight(all);
+	if (all->file->down == 1)
+		go_back(all);
+	if (all->file->left == 1)
+		go_left(all);
+	if (all->file->aleft == 1)
+		vision_left(all);
+	if (all->file->right == 1)
+		go_right(all);
+	if (all->file->aright == 1)
+		vision_left(all);
 	return (0);
 }
 
