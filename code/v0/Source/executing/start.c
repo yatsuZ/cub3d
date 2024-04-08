@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/05 13:12:47 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:17:48 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_error_code	start_exec(t_all_data *all)
 {
-	printf("%ld   |   %ld\n", all->world->spawn.x, all->world->spawn.y);
 	all->mini->mlx = mlx_init();
 	if (all->mini->mlx == NULL)
 		return  ERR_INIT_LIBX;
@@ -23,7 +22,8 @@ t_error_code	start_exec(t_all_data *all)
 	if (convertion_image(all))
 		return ERR_XPM_TO_IMG;
 	screen_size(all);
-	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, all->mini->sizey, "Cub3D");
+	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, \
+		all->mini->sizey, "Cub3D");
 	if (all->mini->win == NULL)
 		return ERR_WIN_LIBX;
 	all->mini->img_mlx.image = mlx_new_image(all->mini->mlx, all->mini->sizex, \

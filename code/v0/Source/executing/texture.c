@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:16:22 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/04 17:28:04 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:13:19 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,5 @@ void	img_pix_put(t_img *img, int x, int y, unsigned long color)
 	pixel = img->addr + ((y * img->line_length) + (x * (img->bitpp / 8)));
 	*(int *)pixel = color;
 }
+
+

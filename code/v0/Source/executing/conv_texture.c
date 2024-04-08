@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:02:25 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/05 13:33:39 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:16:48 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 int	convertion_image(t_all_data *all)
 {
-	ft_memset(all->img, 0, sizeof(t_img));
 	if (all == NULL || all->img == NULL)
 		return (1);
 	all->img->width = 64;
 	all->img->height = 64;
 	all->file->img[NORTHH].image = mlx_xpm_file_to_image(all->mini->mlx, \
-			all->textures->n_wall, &all->img->width, &all->img->height);
+		all->textures->n_wall, &all->img->width, &all->img->height);
 	if (!all->file->img[NORTHH].image)
 		return (1);
 	all->file->img[SOUTHH].image = mlx_xpm_file_to_image(all->mini->mlx, \
-			all->textures->s_wall,&all->img->width, &all->img->height);
+			all->textures->s_wall, &all->img->width, &all->img->height);
 	if (!all->file->img[SOUTHH].image)
 		return (1);
 	all->file->img[WESTT].image = mlx_xpm_file_to_image(all->mini->mlx, \
-			all->textures->n_wall, &all->img->width, &all->img->height);
+			all->textures->w_wall, &all->img->width, &all->img->height);
 	if (!all->file->img[WESTT].image)
 		return (1);
 	all->file->img[EASTT].image = mlx_xpm_file_to_image(all->mini->mlx, \
-			all->textures->n_wall, &all->img->width, &all->img->height);
+			all->textures->e_wall, &all->img->width, &all->img->height);
 	if (!all->file->img[EASTT].image)
 		return (1);
 	if (get_adress_img(all))

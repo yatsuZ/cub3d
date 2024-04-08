@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:35:58 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/03 12:46:25 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:27:39 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	ft_key(t_all_data *all)
 	if (all->file->left == 1)
 		go_left(all);
 	if (all->file->aleft == 1)
-		vision_left(all);
+		vision_right(all);		// right ?
 	if (all->file->right == 1)
 		go_right(all);
 	if (all->file->aright == 1)
-		vision_left(all);
+		vision_left(all);	// left?
 	return (0);
 }
 
@@ -69,11 +69,11 @@ int	key_drop(int keycode, t_data_file *file)
 	if (keycode == XK_a)
 		file->left = 0;
 	if (keycode == XK_Left)
-		file->aleft = 1;
+		file->aleft = 0;
 	if (keycode == XK_d)
 		file->right = 0;
 	if (keycode == XK_Right)
-		file->aright = 1;
+		file->aright = 0;
 	if (keycode == XK_Escape)
 		file->esc = 0;
 	return (0);

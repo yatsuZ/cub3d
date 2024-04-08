@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/04 14:31:36 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:39:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,8 @@ void	free_image(t_all_data *all);
 
 //----raycasting.c
 void	raycasting(t_all_data *all);
-double	conv_neg(double n);
+// double	conv_neg(double n);
+float	conv_neg(float n);
 
 //----raycasting_utils.c
 void	init_dda(t_all_data *all, int i);
@@ -164,14 +165,11 @@ void	perform_dda(t_all_data *all);
 void	handle_no_colision(t_all_data *all);
 void	limit_wall_height(t_all_data *all);
 
-//----raycasting.c
-void	raycasting(t_all_data *all);
-double	conv_neg(double n);
-
 //----texture.c
 t_img	get_texture_tab(t_all_data *all);
 int		rbg_hexa(t_all_data *all, int i);
 void	img_pix_put(t_img *img, int x, int y, unsigned long color);
+
 
 //----vision.c
 void	vision_left(t_all_data *all);
