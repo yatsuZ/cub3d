@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:08:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:05:20 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:39:57 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_tex	init_draw_wall(t_all_data *all)
 	texture.wall_x = get_wallX(all);
 	texture.texture.width = 64;
 	texture.texture.height = 64;
-	//printf("texture.texture.width = %d\n", texture.texture.width);
 	texture.textX = (int)(texture.wall_x * texture.texture.width);
 	
 	if (all->file->side == 0 && all->file->dir.x > 0)

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:35:58 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:27:39 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:09:01 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 int	ft_key(t_all_data *all)
 {
-	// if (keycode == XK_Escape)
-	// {
-	// 	//end(all);
-	// 	exit(0);
-	// }
 	if (all->file->up == 1)
 		go_straight(all);
 	if (all->file->down == 1)

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:09:45 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 17:14:46 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:39:38 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,6 @@ void	handle_no_colision(t_all_data *all)
 			all->file->map.y += all->file->step.y;
 			all->file->side = 1;
 		}
-		if (!all->file->mapp)
-			printf("mapp vide\n");
-		// if (!all->file->map.y || all->file->map.x)
-		// 	printf("pos vide\n");
 		if ((all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) == '1')//
 			all->file->hit = 1;
 	}

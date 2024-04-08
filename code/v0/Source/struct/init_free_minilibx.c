@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:09:14 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/05 13:38:25 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:10:45 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	free_minilibx(t_all_data *all, t_minilibx **mini)
 		mlx_destroy_display((*mini)->mlx);
 		free((*mini)->mlx);
 		(*mini)->mlx = NULL;
-	}	
+	}
 	free(*mini);
 	mini = NULL;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   orientation_texture_parsing.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkoletzk <lkoletzk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:43:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/08 16:22:42 by lkoletzk         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:01:17 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ t_error_code
 	i = skip_space(line) + 3;
 	i += skip_space(line + i);
 	path = ft_substr(line, i, size_path(line + i));
-	printf("%s\n", path);
 	if (!path)
 		return (ERR_MALLOC);
 	return (fill_texture_path(all_t, path, textu));

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:16:22 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:13:19 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:04:14 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ t_img	get_texture_tab(t_all_data *all)
 	if (all->file->side == 0)
 	{
 		if (all->file->dir.x > 0.f)
-			return (all->file->img[NORTHH]);
+			return (all->file->img[EASTT]);
 		else
-			return (all->file->img[SOUTHH]);
+			return (all->file->img[WESTT]);
 	}
 	else
 	{
 		if (all->file->dir.y > 0.f)
-			return (all->file->img[EASTT]);
+			return (all->file->img[SOUTHH]);
 		else
-			return (all->file->img[WESTT]);
+			return (all->file->img[NORTHH]);
 	}
 }
 
@@ -37,5 +37,3 @@ void	img_pix_put(t_img *img, int x, int y, unsigned long color)
 	pixel = img->addr + ((y * img->line_length) + (x * (img->bitpp / 8)));
 	*(int *)pixel = color;
 }
-
-
