@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   start_exec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 15:24:02 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:11:28 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_error_code	init_execution(t_all_data *all)
 		return ERR_XPM_TO_IMG;
 	screen_size(all);
 	all->mini->win = mlx_new_window(all->mini->mlx, all->mini->sizex, \
-		all->mini->sizey, "Cub3D");
+		all->mini->sizey, "cub3D");
 	if (all->mini->win == NULL)
 		return ERR_WIN_LIBX;
 	all->mini->img_mlx.image = mlx_new_image(all->mini->mlx, all->mini->sizex, \
