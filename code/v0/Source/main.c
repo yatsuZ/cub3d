@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:45:46 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 16:14:18 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:19:57 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	main(int argc, char **argv)
 	if (init_all(&all, argv[1]))
 		return (end(all));
 	start_exec(all);
-	return (0); // end
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/03 16:56:44 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:52:18 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ typedef enum e_error_code
 	ERR_XPM_TO_IMG,
 	ERR_TEX,
 	ERR_SIZE_MALLOC,
-
 }	t_error_code;
 
 typedef enum e_extension_file

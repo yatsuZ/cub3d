@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:17:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/04 15:20:58 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:17:17 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	init_img(t_error_code *err, t_img **img)
 	ft_memset(*img, 0, sizeof(t_img));
 	(*img)->image = NULL;
 	(*img)->addr = NULL;
-	
 	return (0);
 }
 

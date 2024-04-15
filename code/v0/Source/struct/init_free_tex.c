@@ -6,19 +6,20 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:29:17 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/04 15:03:49 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:19:37 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
-int	init_tex(t_error_code *err, t_tex **tex) {
+int	init_tex(t_error_code *err, t_tex **tex)
+{
 	if (!err || *err != ERR_NULL)
 		return (1);
 	*tex = ft_calloc(1, sizeof(t_tex));
 	if (!(*tex))
 		return (*err = ERR_MALLOC, 1);
-	ft_memset(*tex, 0, sizeof(t_tex)); // Utilisation correcte de ft_memset
+	ft_memset(*tex, 0, sizeof(t_tex));
 	(*tex)->color = NULL;
 	return (0);
 }

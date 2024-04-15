@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:09:14 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 14:47:35 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:17:49 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ int	init_minilibx(t_error_code *err, t_minilibx **mini)
 	*mini = ft_calloc(1, sizeof(t_minilibx));
 	if (!(*mini))
 		return (*err = ERR_MALLOC, 1);
-	//ft_memset(&mini, 0, sizeof(t_minilibx));
 	return (0);
 }
 
 void	free_minilibx(t_all_data *all, t_minilibx **mini)
 {
-	if (!mini|| !*mini || !all)
+	if (!mini || !*mini || !all)
 		return ;
 	free_image(all);
 	if ((*mini)->win)

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:38:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 14:56:31 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:19:08 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	init_data_file(t_error_code *err, t_data_file **file)
 	*file = ft_calloc(1, sizeof(t_data_file));
 	if (!(*file))
 		return (*err = ERR_MALLOC, 1);
-
 	return (0);
 }
 
@@ -56,10 +55,10 @@ t_error_code	alloc_mapp(t_all_data *all)
 	j = 0;
 	size = all->fcb->nbr_line - all->fcb->start_map;
 	if (all->fcb->nbr_line - all->fcb->start_map <= 0)
-		return ERR_SIZE_MALLOC;
+		return (ERR_SIZE_MALLOC);
 	all->file->mapp = malloc(sizeof (char *) * (size + 1));
 	if (!all->file->mapp)
-		return ERR_MALLOC;
+		return (ERR_MALLOC);
 	while (i < size + 1)
 		all->file->mapp[i++] = NULL;
 	i = all->fcb->start_map;
@@ -70,5 +69,5 @@ t_error_code	alloc_mapp(t_all_data *all)
 		j++;
 	}
 	all->file->mapp[j] = NULL;
-	return ERR_NULL;
+	return (ERR_NULL);
 }

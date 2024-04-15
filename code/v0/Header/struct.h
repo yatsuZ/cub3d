@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:31:35 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 15:11:37 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:50:55 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_world_data
 	char			initial_angle;
 	t_cellule		*map;
 	t_xy			spawn;
-}	t_world_data ;
+}	t_world_data;
 
 typedef struct s_file_cub
 {
@@ -83,12 +83,12 @@ typedef struct s_color
 typedef struct s_tex
 {
 	t_img		texture;
-	double			wall_x;
-	int				textX;
-	int				textY;
-	double			textStep;
-	double			textPos;
-	char			*color;
+	double		wall_x;
+	int			textx;
+	int			texty;
+	double		textstep;
+	double		textpos;
+	char		*color;
 }	t_tex;
 
 typedef struct s_minilibx
@@ -103,7 +103,6 @@ typedef struct s_minilibx
 
 typedef struct s_data_file
 {
-	///-----KEY-----///
 	int				up;
 	int				down;
 	int				left;
@@ -111,7 +110,6 @@ typedef struct s_data_file
 	int				aleft;
 	int				aright;
 	int				esc;
-
 	t_xyd			raydir;
 	t_xyd			rayplane;
 	t_xyd			campos;
@@ -121,7 +119,6 @@ typedef struct s_data_file
 	t_xyd			delta;
 	t_xyd			step;
 	t_xyd			sidedist;
-	
 	double			distwall;
 	int				line_height;
 	int				hit;

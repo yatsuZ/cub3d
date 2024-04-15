@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:02:25 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 15:15:03 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:57:49 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ int	get_adress_img(t_all_data *all)
 		return (1);
 	all->file->img[NORTHH].addr = mlx_get_data_addr(\
 			all->file->img[NORTHH].image, &all->file->img[NORTHH].bitpp, \
-			&all->file->img[NORTHH].line_length, &all->file->img[NORTHH].endian);
+			&all->file->img[NORTHH].line_length, \
+			&all->file->img[NORTHH].endian);
 	if (!all->file->img[NORTHH].addr)
 		return (1);
 	all->file->img[SOUTHH].addr = mlx_get_data_addr(\
 			all->file->img[SOUTHH].image, &all->file->img[SOUTHH].bitpp, \
-			&all->file->img[SOUTHH].line_length, &all->file->img[SOUTHH].endian);
+			&all->file->img[SOUTHH].line_length, \
+			&all->file->img[SOUTHH].endian);
 	if (!all->file->img[SOUTHH].addr)
 		return (1);
 	all->file->img[EASTT].addr = mlx_get_data_addr(\

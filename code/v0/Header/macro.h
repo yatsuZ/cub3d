@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:28:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/04 17:26:00 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:53:38 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@
 # define FLOOR 0
 # define CEIL 1
 
-# endif
+#endif

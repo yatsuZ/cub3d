@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verif_element.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkoletzk <lkoletzk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 23:20:36 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/05 18:31:27 by lkoletzk         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:15:09 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,5 @@ t_error_code	verif_element_spawn(t_cellule *c, t_world_data *w)
 		w->start_angle = WEST;
 		w->initial_angle = 'W';
 	}
-	w->spawn = c->position;
-	return (verif_element_floor(c));
+	return (w->spawn = c->position, verif_element_floor(c));
 }
-

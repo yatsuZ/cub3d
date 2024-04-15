@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 16:22:44 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:10:53 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	show_end2(t_error_code err)
 		printf("MAP NOT CLOSE BY WALL !\n");
 	else if (err == ERR_INIT_LIBX)
 		printf("Minilibx init failed\n");
-	else if (err ==	ERR_WIN_LIBX)
+	else if (err == ERR_WIN_LIBX)
 		printf("Minilibx window failed\n");
 	else if (err == ERR_XPM_TO_IMG)
 		printf("Invalid image\n");

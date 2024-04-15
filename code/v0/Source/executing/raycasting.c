@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:04:38 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:39:47 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:05:55 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	raycasting(t_all_data *all)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < all->mini->sizex)
