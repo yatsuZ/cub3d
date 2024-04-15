@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:08:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:39:57 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:03:48 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 void	draw_wall(t_all_data *all, int j)
 {
 	t_tex	texture;
+	int		i;
 
 	texture = init_draw_wall(all);
-	int i = all->file->drawstart;
+	i = all->file->drawstart;
 	while (i < all->file->drawend)
 	{
 		texture.textY = (int)texture.textPos & (all->img->height - 1);
@@ -38,12 +39,8 @@ t_tex	init_draw_wall(t_all_data *all)
 	texture.texture.width = 64;
 	texture.texture.height = 64;
 	texture.textX = (int)(texture.wall_x * texture.texture.width);
-	
-	if (all->file->side == 0 && all->file->dir.x > 0)
+	if (all->file->side == 1 || all->file->side == 2) // LAST ADD
 		texture.textX = texture.texture.width - texture.textX - 1;
-	if (all->file->side == 1 && all->file->dir.y < 0)
-		texture.textX = texture.texture.width - texture.textX - 1;
-	
 	texture.textStep = 1.0 * texture.texture.height / all->file->line_height;
 	texture.textPos = (all->file->drawstart - all->mini->sizey / 2 + \
 	all->file->line_height / 2) * texture.textStep;
@@ -62,9 +59,9 @@ double	get_wallX(t_all_data *all)
 		wallx = all->file->campos.x + all->file->distwall \
 		* all->file->dir.x;
 	wallx -= floor(wallx);
-	// if ((all->file->side == 0 && all->file->dir.x < 0) \
-	// || (all->file->side == 1 && all->file->dir.y < 0))
-	// 	wallx = 1.0f - wallx;         //// WILL
+	if ((all->file->side == 0 && all->file->dir.x < 0) \
+	|| (all->file->side == 1 && all->file->dir.y < 0))
+		wallx = 1.0f - wallx;
 	return (wallx);
 }
 
