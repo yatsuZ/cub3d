@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:09:45 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:39:38 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:45:34 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,9 @@ void	handle_no_colision(t_all_data *all)
 			all->file->map.y += all->file->step.y;
 			all->file->side = 1;
 		}
-		if ((all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) == '1')//
+		if ((all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) == '1' \
+			&& (all->file->mapp[(int)all->file->map.y][(int)all->file->map.x]) \
+			!= all->world->initial_angle)
 			all->file->hit = 1;
 	}
 }
@@ -111,14 +113,9 @@ void	limit_wall_height(t_all_data *all)
 	else
 		all->file->distwall = (all->file->sidedist.y - all->file->delta.y);
 	all->file->line_height = (int)(all->mini->sizey / all->file->distwall); 
-	
-
 	all->file->drawstart = -all->file->line_height / 2 + all->mini->sizey / 2;
-	
 	if (all->file->drawstart < 0)
 		all->file->drawstart = 0;
-	
-	
 	all->file->drawend = all->file->line_height / 2 + all->mini->sizey / 2;;
 	
 	if (all->file->drawend >= all->mini->sizey)

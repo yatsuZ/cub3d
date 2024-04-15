@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:38:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/05 15:33:10 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:56:31 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,30 @@ int	init_data_file(t_error_code *err, t_data_file **file)
 	*file = ft_calloc(1, sizeof(t_data_file));
 	if (!(*file))
 		return (*err = ERR_MALLOC, 1);
-	//ft_memset(&file, 0, sizeof(t_data_file));
+
 	return (0);
+}
+
+static	void	ft_free(char **free_me)
+{
+	int		i;
+
+	i = 0;
+	if (!free_me)
+		return ;
+	while (free_me[i])
+	{
+		free(free_me[i]);
+		i++;
+	}
+	free(free_me);
 }
 
 void	free_data_file(t_all_data *all)
 {
 	if (!all->file)
 		return ;
-	free_tab_char(all->file->mapp, (all->fcb->nbr_line - all->fcb->start_map + 1));
+	ft_free(all->file->mapp);
 	free(all->file);
 }
 
@@ -50,8 +65,7 @@ t_error_code	alloc_mapp(t_all_data *all)
 	i = all->fcb->start_map;
 	while (i < all->fcb->nbr_line)
 	{
-		all->file->mapp[j] = all->fcb->contained_by_line[i];
-		//printf("%s", all->file->mapp[j]);
+		all->file->mapp[j] = ft_strdup(all->fcb->contained_by_line[i]);
 		i++;
 		j++;
 	}

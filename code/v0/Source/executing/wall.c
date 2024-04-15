@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:08:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 13:03:48 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:28:06 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_tex	init_draw_wall(t_all_data *all)
 	texture.texture.width = 64;
 	texture.texture.height = 64;
 	texture.textX = (int)(texture.wall_x * texture.texture.width);
-	if (all->file->side == 1 || all->file->side == 2) // LAST ADD
+	if (all->file->side == 1 || all->file->side == 2)
 		texture.textX = texture.texture.width - texture.textX - 1;
 	texture.textStep = 1.0 * texture.texture.height / all->file->line_height;
 	texture.textPos = (all->file->drawstart - all->mini->sizey / 2 + \

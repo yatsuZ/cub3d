@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/08 17:39:52 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:25:05 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,12 +129,13 @@ void		show_cellule(t_cellule *c);
 // EXECUTING
 //----start.c
 t_error_code	start_exec(t_all_data *all);
+t_error_code	init_execution(t_all_data *all);
 int		ft_game(t_all_data *all);
 void	screen_size(t_all_data *all);
 
 //----key.c
-int		key_press(int keycode, t_data_file *all);
-int		key_drop(int keycode, t_data_file *all);
+int		key_press(int keycode, t_data_file *file);
+int		key_drop(int keycode, t_data_file *file);
 int		ft_key(t_all_data *all);
 int		escape(t_all_data *all);
 
@@ -155,6 +156,7 @@ void	free_image(t_all_data *all);
 
 //----raycasting.c
 void	raycasting(t_all_data *all);
+
 // double	conv_neg(double n);
 float	conv_neg(float n);
 

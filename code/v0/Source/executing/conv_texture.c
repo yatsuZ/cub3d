@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:02:25 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:16:48 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:15:03 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	free_image(t_all_data *all)
 {
 	if (!all->mini->mlx)
 		return ;
+	if (all->mini->img_mlx.image)
+		mlx_destroy_image(all->mini->mlx, all->mini->img_mlx.image);
 	if (all->file->img[NORTHH].image)
 		mlx_destroy_image(all->mini->mlx, all->file->img[NORTHH].image);
 	if (all->file->img[SOUTHH].image)

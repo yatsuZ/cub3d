@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/04/04 15:37:34 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/15 15:29:02 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ UTILS_FILES =	ft_calloc.c	\
 				verif_element.c
 
 EXEC_PATH  =	executing/
-EXEC_FILES =	start.c	\
+EXEC_FILES =	start_exec.c	\
 				key.c	\
 				move.c	\
 				init_orientation.c	\

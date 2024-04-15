@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkoletzk <lkoletzk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:45:46 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/05 18:27:06 by lkoletzk         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:46:11 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		printf("main\n");
 		return (end(all));
 	}
-	// show_world(all->world);
+	//show_world(all->world);
 	start_exec(all);
-	return (end(all));
+	return (/*end(all)*/ 0);
 }

@@ -6,13 +6,28 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 18:17:48 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:24:02 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d.h"
 
 t_error_code	start_exec(t_all_data *all)
+{
+	t_error_code	err;
+
+	err = init_execution(all);
+	if (err != ERR_NULL)
+		return err;
+	mlx_loop_hook(all->mini->mlx, ft_game, all);
+	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
+	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
+	mlx_hook(all->mini->win, ClientMessage, 1L << 5, escape, all);
+	mlx_loop(all->mini->mlx);
+	return ERR_NULL;
+}
+
+t_error_code	init_execution(t_all_data *all)
 {
 	all->mini->mlx = mlx_init();
 	if (all->mini->mlx == NULL)
@@ -35,11 +50,6 @@ t_error_code	start_exec(t_all_data *all)
 		&all->mini->img_mlx.endian);
 	if (!(all->mini->img_mlx.addr))
 		return ERR_WIN_LIBX;
-	mlx_loop_hook(all->mini->mlx, ft_game, all);
-	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
-	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
-	mlx_hook(all->mini->win, ClientMessage, 1L << 5, escape, all->file);
-	mlx_loop(all->mini->mlx);
 	return ERR_NULL;
 }
 

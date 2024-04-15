@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/04 18:23:36 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:57:45 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void	free_all(t_all_data **all)
 {
 	if (!all || !(*all))
 		return ;
-	free_data_file((*all));
+	
 	free_world(&(*all)->world);
 	free_all_texture(&(*all)->textures);
 	free_file_cub(&((*all)->fcb));
 	free_minilibx((*all), &(*all)->mini);
+	free_data_file((*all));
 	free_img((*all)->img);
 	free_color((*all)->color);
 	free((*all)->tex);
