@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:53:50 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 16:59:21 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:17:18 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,26 @@
 void	go_straight(t_all_data *all)
 {
 	if (all->file->mapp[(int)(all->file->campos.y + all->file->raydir.y \
-	* 0.045)][(int)(all->file->campos.x + all->file->raydir.x \
-	* 0.045)] == 48 || is_dir(all->file->mapp[(int)(all->file->campos.y \
-	+ all->file->raydir.y \
-	* 0.045)][(int)(all->file->campos.x + all->file->raydir.x \
-	* 0.045)]))
-	{
-		all->file->campos.x += all->file->raydir.x * 0.045;
+	* 0.045)][(int)all->file->campos.x] != '1')
 		all->file->campos.y += all->file->raydir.y * 0.045;
-		raycasting(all);
-	}
+	if (all->file->mapp[(int)all->file->campos.y]\
+	[(int)(all->file->campos.x + all->file->raydir.x \
+		* 0.045)] != '1')
+		all->file->campos.x += all->file->raydir.x * 0.045;
+	raycasting(all);
+
 }
 
 void	go_back(t_all_data *all)
 {
 	if (all->file->mapp[(int)(all->file->campos.y - all->file->raydir.y \
-	* 0.045)][(int)(all->file->campos.x - all->file->raydir.x \
-	* 0.045)] == 48 || is_dir(all->file->mapp[(int)(all->file->campos.y \
-	- all->file->raydir.y \
-	* 0.045)][(int)(all->file->campos.x - all->file->raydir.x \
-	* 0.045)]))
-	{
-		all->file->campos.x -= all->file->raydir.x * 0.045;
+	* 0.045)][(int)all->file->campos.x] != '1')
 		all->file->campos.y -= all->file->raydir.y * 0.045;
-		raycasting(all);
-	}
+	if (all->file->mapp[(int)all->file->campos.y]\
+	[(int)(all->file->campos.x - all->file->raydir.x \
+	* 0.045)] != '1')
+		all->file->campos.x -= all->file->raydir.x * 0.045;
+	raycasting(all);
 }
 
 void	go_left(t_all_data *all)
