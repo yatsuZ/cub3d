@@ -1,7 +1,11 @@
-WE img/w.xpm
-NO img/n.xpm
-SO img/s.xpm
-EA img/e.xpm
+WE       img/wall_greyF.xpm
+
+
+NO img/wall_redF.xpm
+
+SO img/wall_brownF.xpm
+
+EA img/wall_orangeF.xpm
 
 F 42,42,42
 C 240,240,0

@@ -1,11 +1,11 @@
-WE       img/w.xpm
+WE       img/wall_greyF.xpm
 
 
-NO img/n.xpm
+NO img/wall_redF.xpm
 
-SO img/s.xpm                  
+SO img/wall_brownF.xpm
 
-EA img/e.xpm
+EA img/wall_orangeF.xpm
 
 F 42,42,42
 
