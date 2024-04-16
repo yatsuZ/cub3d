@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/04/15 15:29:02 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/16 14:27:03 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,12 +104,45 @@ $(OBJ_PATH)%.o: $(CUB3D_PATH)%.c
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH)
 
+####################################################### OBJ de Bonus
+
+PROGRAM_NAME_BONUS = cub3D_bonus
+
+BONUS_PATH = Source_bonus/
+BONUS_FILES = main.c													\
+				${addprefix ${UTILS_PATH}, ${UTILS_FILES}}				\
+				${addprefix ${STRUCT_PATH}, ${STRUCT_FILES}}			\
+				${addprefix ${SHOW_STRUCT_PATH}, ${SHOW_STRUCT_FILES}}	\
+				${addprefix ${PARSING_PATH}, ${PARSING_FILES}}			\
+				${addprefix ${ERROR_PATH}, ${ERROR_FILES}}				\
+				${addprefix ${EXEC_PATH}, ${EXEC_FILES}}				\
+
+OBJ_BONUS_PATH = obj_bonus/
+BONUS_OBJ = ${addprefix ${OBJ_BONUS_PATH}, ${BONUS_FILES:.c=.o}}
+
+############### COMMANDE BONUS
+
+bonus: $(OBJ_BONUS_PATH) ${PROGRAM_NAME_BONUS}
+
+${PROGRAM_NAME_BONUS}: ${BONUS_OBJ}
+	${MAKE_MLX}
+	@$(CC) $(C_FLAGS) ${MLX_LIB} ${BONUS_OBJ} ${MLX_FLAGS} -o ${PROGRAM_NAME_BONUS}
+
+$(OBJ_BONUS_PATH)%.o: $(BONUS_PATH)%.c
+	@mkdir -p $(@D)
+	@$(CC) $(C_FLAGS) -I /usr/include -I mlx_linux -O3 -c $< -o $@
+
+$(OBJ_BONUS_PATH):
+	@mkdir -p $(OBJ_BONUS_PATH)
+##################################################################################
 clean:
 	${MAKE_MLX} clean
 	$(RM) $(OBJ_PATH)
+	$(RM) $(OBJ_BONUS_PATH)
 
 fclean: clean
 	$(RM) ${PROGRAM_NAME}
+	$(RM) ${PROGRAM_NAME_BONUS}
 
 norme:
 	clear
