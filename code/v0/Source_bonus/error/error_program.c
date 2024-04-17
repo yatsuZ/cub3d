@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 21:57:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 17:10:53 by lazanett         ###   ########.fr       */
+/*   Created: 2024/04/16 14:48:24 by lazanett          #+#    #+#             */
+/*   Updated: 2024/04/16 14:52:12 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static void	show_end2(t_error_code err)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:48:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 01:06:34 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:41 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 char	*ft_replace(char *str, char to_replace, char c)
 {

@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:08:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 17:10:24 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:44:59 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 void	draw_wall(t_all_data *all, int j)
 {

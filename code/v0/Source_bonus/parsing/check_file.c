@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:02:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 16:38:06 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:08 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static bool	is_directory(char *file)
 {

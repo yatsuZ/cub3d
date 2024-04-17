@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:43:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/08 19:01:17 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:11 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static t_error_code
 	fill_texture_path(t_all_texture *all_t, char *path, t_texture textu)

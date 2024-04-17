@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 16:16:22 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/08 19:04:14 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:44:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 t_img	get_texture_tab(t_all_data *all)
 {

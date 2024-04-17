@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:49:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/05 13:27:36 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:21 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static bool	is_a_legit_syntaxe_map(char **texte, int start_i)
 {

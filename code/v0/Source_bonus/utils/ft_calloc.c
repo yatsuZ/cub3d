@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:54:45 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/25 11:34:42 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:26 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

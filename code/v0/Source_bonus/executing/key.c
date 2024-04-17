@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:35:58 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 15:18:57 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:44:30 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	ft_key(t_all_data *all)
 {

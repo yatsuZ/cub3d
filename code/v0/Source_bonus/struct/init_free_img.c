@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:17:06 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 17:17:17 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:13 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	init_img(t_error_code *err, t_img **img)
 {

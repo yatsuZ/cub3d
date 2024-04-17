@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   gnl_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:32:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:34:17 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:31 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	ft_strlen_or_findendl(char *s, int option)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_free_file_cub.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 19:42:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:13:49 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:06 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static int	get_content(t_file_cub *fcb, t_error_code *err)
 {

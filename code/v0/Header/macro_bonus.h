@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_free_color.c                                  :+:      :+:    :+:   */
+/*   macro_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 13:03:19 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/16 14:45:57 by lazanett         ###   ########.fr       */
+/*   Created: 2024/03/13 17:28:00 by yzaoui            #+#    #+#             */
+/*   Updated: 2024/04/17 12:25:53 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d_bonus.h"
+#ifndef MACRO_H
+# define MACRO_H
 
-int	init_color(t_error_code *err, t_color **rgb)
-{
-	if (!err || *err != ERR_NULL)
-		return (1);
-	*rgb = ft_calloc(1, sizeof(t_color));
-	if (!(*rgb))
-		return (*err = ERR_MALLOC, 1);
-	ft_memset(*rgb, 0, sizeof(t_color));
-	return (0);
-}
+# include "./struct_bonus.h"
 
-void	free_color(t_color *rgb)
-{
-	if (!rgb)
-		return ;
-	free(rgb);
-}
+# define CHAR_ALLOWED(c) ((c == ' ') || (c == '0') || (c == '1') || \
+(c == 'N') || (c == 'S') || (c == 'E') || (c == 'W') || (c == '\n'))
+
+# define NORTHH 0
+# define SOUTHH 1
+# define WESTT 2
+# define EASTT 3
+
+# define FLOOR 0
+# define CEIL 1
+
+#define MINIMAP_SIZE 10
+#define MINIMAP_SCALE 5
+
+#endif

@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:09:14 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 17:17:49 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:16 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	init_minilibx(t_error_code *err, t_minilibx **mini)
 {

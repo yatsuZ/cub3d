@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:31:28 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 17:16:12 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	init_all(t_all_data **all, char *path_file)
 {

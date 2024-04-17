@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 16:02:25 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/15 16:57:49 by lazanett         ###   ########.fr       */
+/*   Created: 2024/04/16 14:48:33 by lazanett          #+#    #+#             */
+/*   Updated: 2024/04/16 14:48:36 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	convertion_image(t_all_data *all)
 {

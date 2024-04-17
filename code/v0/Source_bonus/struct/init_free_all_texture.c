@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 00:32:37 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/25 16:00:29 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:48 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static t_texture	get_type_texture(char *line, bool *legit_line)
 {

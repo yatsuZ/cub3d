@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rgb_texture_parsing.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:59:58 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:38:59 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:14 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static unsigned long	rgb_to_long(int r, int g, int b)
 {

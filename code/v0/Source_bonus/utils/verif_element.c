@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 23:20:36 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 17:15:09 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 t_error_code	verif_element_void(t_cellule *c)
 {

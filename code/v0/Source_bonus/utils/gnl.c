@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:18:02 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/13 17:36:02 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:34 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 char	*ft_strcutendl(char *str, char **after, register int i, int i_endl)
 {

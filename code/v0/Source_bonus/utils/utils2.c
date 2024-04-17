@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:48:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 14:04:29 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:45 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 int	skip_space(char *line)
 {

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 00:12:09 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/20 00:12:45 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:29 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
-
+#include "./../../Header/cub3d_bonus.h"
 static size_t	ft_nomber_of_word(const char *s, char c)
 {
 	size_t	nbw;

@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:45:46 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 17:19:57 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:11:52 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../Header/cub3d.h"
+#include "./../Header/cub3d_bonus.h"
 
 int	end(t_all_data *all)
 {
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 	all = NULL;
 	if (init_all(&all, argv[1]))
 		return (end(all));
+	//show_world(all->world);
 	start_exec(all);
 	return (0);
 }

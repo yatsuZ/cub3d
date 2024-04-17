@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   show_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 03:12:51 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/14 16:38:43 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:34 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 static void	show_rgb(unsigned long rgb)
 {

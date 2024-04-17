@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/04/16 14:27:03 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/17 18:01:59 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,12 @@ EXEC_FILES =	start_exec.c	\
 				texture.c	\
 				vision.c	\
 				wall.c	\
+				
+EXEC_BONUS  =	executing_bonus/
+EXEC_BONUS_FILES = 	minimap.c	\
+					minimap_utils.c	\
+
+
 
 CUB3D_PATH = Source/
 CUB3D_FILES =	main.c													\
@@ -116,6 +122,7 @@ BONUS_FILES = main.c													\
 				${addprefix ${PARSING_PATH}, ${PARSING_FILES}}			\
 				${addprefix ${ERROR_PATH}, ${ERROR_FILES}}				\
 				${addprefix ${EXEC_PATH}, ${EXEC_FILES}}				\
+				${addprefix ${EXEC_BONUS}, ${EXEC_BONUS_FILES}}			\
 
 OBJ_BONUS_PATH = obj_bonus/
 BONUS_OBJ = ${addprefix ${OBJ_BONUS_PATH}, ${BONUS_FILES:.c=.o}}

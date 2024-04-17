@@ -6,11 +6,11 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:05:48 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/04 17:22:56 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:37 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 void	show_cardinal(t_cardinal c)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   show_files.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 21:40:23 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/13 19:22:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:29 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../Header/cub3d.h"
+#include "./../../Header/cub3d_bonus.h"
 
 void	show_file_cub(t_file_cub *fcb)
 {
