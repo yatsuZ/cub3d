@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_free_cellule.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:49:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/15 00:35:19 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/19 15:10:05 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	init_cellule(t_cellule **cellule, char c, t_error_code *err)
 	(*cellule)->west = NULL;
 	(*cellule)->position.x = -1;
 	(*cellule)->position.y = -1;
-	if (!(CHAR_ALLOWED(c)))
+	if (!(char_allowed(c)))
 		return (*err = ERR_BAD_SYNTAXE_MAP, 1);
 	(*cellule)->element = define_element(c);
 	return (0);

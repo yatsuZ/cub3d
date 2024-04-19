@@ -6,13 +6,12 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:48:13 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/17 17:49:56 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:00:21 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef STRUCT_H
-# define STRUCT_H
+#ifndef STRUCT_BONUS_H
+# define STRUCT_BONUS_H
 
 # include "./import.h"
 
@@ -111,6 +110,7 @@ typedef struct s_data_file
 	int				aleft;
 	int				aright;
 	int				esc;
+	int				keymap;
 	t_xyd			raydir;
 	t_xyd			rayplane;
 	t_xyd			campos;

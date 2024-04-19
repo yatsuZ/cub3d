@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 17:28:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/17 12:25:10 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:10:49 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define MACRO_H
 
 # include "./struct.h"
-
-# define CHAR_ALLOWED(c) ((c == ' ') || (c == '0') || (c == '1') || \
-(c == 'N') || (c == 'S') || (c == 'E') || (c == 'W') || (c == '\n'))
 
 # define NORTHH 0
 # define SOUTHH 1

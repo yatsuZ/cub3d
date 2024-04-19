@@ -6,12 +6,12 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/17 18:05:17 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:44:46 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include "./macro_bonus.h"
 
@@ -121,6 +121,7 @@ char			*ft_strjoin2(char *s1, char *s2);
 char			*ft_strdup2(char *s, int option);
 void			*ft_calloc2(int nmemb, int size);
 int				ft_strlen_or_findendl(char *s, int option);
+bool			char_allowed(char c);
 
 // Debeugage
 
@@ -152,7 +153,6 @@ bool			is_dir(char c);
 
 //----init_orientation.c
 int				init_orient(t_all_data *all);
-void			get_size_mapp(t_all_data *all);
 
 //----conv_texture.c
 int				convertion_image(t_all_data *all);
@@ -190,15 +190,5 @@ double			get_wallx(t_all_data *all);
 
 // MAIN
 int				end(t_all_data *all);
-
-//----minimap.c
-void			draw_square(t_all_data *all, int y, int x, int color);
-void			draw_minimap(t_all_data *all, int y, int x);
-
-//----minimap_utils.c
-int				min(int a, int b);
-int				max(int a, int b);
-void			init_minimap(t_all_data *all);
-void			draw_cam_minimap(t_all_data *all);
 
 #endif

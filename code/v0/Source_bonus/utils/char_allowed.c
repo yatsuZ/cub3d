@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycasting.c                                       :+:      :+:    :+:   */
+/*   char_allowed.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 16:04:38 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/19 16:42:29 by lazanett         ###   ########.fr       */
+/*   Created: 2024/04/19 15:06:01 by lazanett          #+#    #+#             */
+/*   Updated: 2024/04/19 16:03:19 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../Header/cub3d_bonus.h"
 
-void	raycasting(t_all_data *all)
+bool	char_allowed(char c)
 {
-	int	i;
-
-	i = 0;
-	while (i < all->mini->sizex)
-	{
-		init_dda(all, i);
-		calcul_delta(all);
-		perform_dda(all);
-		handle_no_colision(all);
-		limit_wall_height(all);
-		draw_wall(all, i);
-		i++;
-	}
-	mlx_put_image_to_window(all->mini->mlx, all->mini->win, \
-		all->mini->img_mlx.image, 0, 0);
+	return (((c == ' ') || (c == '0') || (c == '1') || \
+	(c == 'N') || (c == 'S') || (c == 'E') || (c == 'W') || (c == '\n')));
 }
 
-float	conv_neg(float n)
+size_t	ft_strlen2(const char *cha)
 {
-	if (n < 0)
-		n *= -1;
-	return (n);
+	size_t	i;
+
+	i = 0;
+	while (cha[i] != '\0' && cha[i] != '\n')
+		i++;
+	return (i);
 }

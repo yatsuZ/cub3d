@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/04/17 18:01:59 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/19 16:59:18 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ UTILS_FILES =	ft_calloc.c	\
 				utils1.c	\
 				utils2.c	\
 				utils3.c	\
-				verif_element.c
+				verif_element.c	\
+				char_allowed.c	\
 
 EXEC_PATH  =	executing/
 EXEC_FILES =	start_exec.c	\
@@ -65,7 +66,7 @@ EXEC_FILES =	start_exec.c	\
 				
 EXEC_BONUS  =	executing_bonus/
 EXEC_BONUS_FILES = 	minimap.c	\
-					minimap_utils.c	\
+
 
 
 

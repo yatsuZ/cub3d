@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/15 17:10:03 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:09:16 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ bool			is_number_array(char **tab, int i);
 bool			is_a_legit_line_map(char *str);
 int				size_tab(char **tab);
 t_element_map	define_element(char c);
+bool			char_allowed(char c);
 
 // OLD FT UTILS
 

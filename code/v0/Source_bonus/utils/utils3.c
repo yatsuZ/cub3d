@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 23:09:51 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/17 13:57:02 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:03:30 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,18 +109,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (news && news[i])
 		news[i] = '\0';
 	return (news);
-}
-
-size_t	ft_strlen2(const char *cha)
-{
-	size_t	i;
-
-	i = 0;
-	while (cha[i] != '\0' && cha[i] != '\n')
-	{
-		//printf("%c\n", cha[i]);
-		i++;
-	}
-	//printf("i = %zu\n", i);
-	return (i);
 }

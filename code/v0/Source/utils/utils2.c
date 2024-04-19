@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:48:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/03/21 14:04:29 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:10:05 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	is_a_legit_line_map(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (CHAR_ALLOWED(str[i]) == false)
+		if (char_allowed(str[i]) == false)
 			return (false);
 		i++;
 	}

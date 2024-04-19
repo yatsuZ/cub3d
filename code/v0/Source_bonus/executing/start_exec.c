@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 14:36:51 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/16 15:30:56 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:42:21 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_error_code	start_exec(t_all_data *all)
 	err = init_execution(all);
 	if (err != ERR_NULL)
 		return (err);
-	// mlx_mouse_move(all->mini->mlx, all->mini->win,
-	// 	all->mini->sizex / 2, all->mini->sizey / 2);
 	mlx_loop_hook(all->mini->mlx, ft_game, all);
 	mlx_hook(all->mini->win, 2, KeyPressMask, &key_press, all->file);
 	mlx_hook(all->mini->win, 3, KeyReleaseMask, &key_drop, all->file);
