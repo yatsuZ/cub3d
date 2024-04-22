@@ -6,7 +6,7 @@
 #    By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:05:40 by yzaoui            #+#    #+#              #
-#    Updated: 2024/04/19 16:59:18 by lazanett         ###   ########.fr        #
+#    Updated: 2024/04/22 11:52:45 by lazanett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ EXEC_FILES =	start_exec.c	\
 				
 EXEC_BONUS  =	executing_bonus/
 EXEC_BONUS_FILES = 	minimap.c	\
+					minimap_utils.c	\
 
 
 

@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:56:47 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/19 16:57:12 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:15:44 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,4 @@ void	init_minimap(t_all_data *all)
 		all->file->perimeter_size);
 	all->file->bis.x = 0;
 	all->file->bis.y = 0;
-}
-
-void	draw_cam_minimap(t_all_data *all)
-{
-	all->file->player_draw.x = (all->file->campos.x - (float)all->file->start.x) * 5.0;
-	all->file->player_draw.y = (all->file->campos.y - (float)all->file->start.y) * 5.0;
-	// all->file->player_draw.x = max(0, min(all->file->player_draw.x, \
-	// all->file->perimeter_size * 5));
-	// all->file->player_draw.y = max(0, min(all->file->player_draw.y, \
-	// all->file->perimeter_size * 5));
-	draw_square(all, all->file->player_draw.y, \
-	all->file->player_draw.x, 0xF11818);
-
 }

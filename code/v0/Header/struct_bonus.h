@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:48:13 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/19 16:00:21 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:21:01 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ typedef struct s_data_file
 	long			nb_max_col;
 	long			nb_max_row;
 	int				perimeter_size;
+	int				current_y_bis;
 	t_xyd			bis;
 	t_xyd			start;
 	t_xyd			end;

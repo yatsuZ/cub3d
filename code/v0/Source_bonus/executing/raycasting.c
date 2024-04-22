@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 16:04:38 by lazanett          #+#    #+#             */
-/*   Updated: 2024/04/19 16:42:29 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:53:31 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	raycasting(t_all_data *all)
 		draw_wall(all, i);
 		i++;
 	}
+	draw_minimap(all, -1, -1);
 	mlx_put_image_to_window(all->mini->mlx, all->mini->win, \
 		all->mini->img_mlx.image, 0, 0);
 }

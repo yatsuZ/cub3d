@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:47:04 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/19 16:44:46 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:15:50 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ bool			is_dir(char c);
 //----init_orientation.c
 int				init_orient(t_all_data *all);
 
+void	get_size_mapp(t_all_data *all);
 //----conv_texture.c
 int				convertion_image(t_all_data *all);
 int				get_adress_img(t_all_data *all);
@@ -191,4 +192,14 @@ double			get_wallx(t_all_data *all);
 // MAIN
 int				end(t_all_data *all);
 
+//---minimap.c
+
+void	draw_minimap(t_all_data *all, int y, int x);
+void	draw_square(t_all_data *all, int y, int x, int color);
+
+//minimap_utils.c
+
+int				min(int a, int b);
+int				max(int a, int b);
+void			init_minimap(t_all_data *all);
 #endif
