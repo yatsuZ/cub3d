@@ -1,17 +1,35 @@
 WE       img/wall_greyF.xpm
 
 
-NO img/wall_redF.xpm
+
+F 0,10,100
 
 SO img/wall_brownF.xpm
 
 EA img/wall_orangeF.xpm
 
-F 244,164,96
-C 175,238,238
 
-11111
-10001
-10E01
-10001
-11111
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO                                     img/wall_redF.xpm
+
+C 175              , 255 ,        238
+
+
+111111
+100101
+101001
+1100N1
+111111
