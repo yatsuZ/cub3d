@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 23:09:51 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/02/20 00:11:20 by yzaoui           ###   ########.fr       */
+/*   Updated: 2024/04/23 14:45:31 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 		nbr = nbr * 10;
 		nbr += nptr[i] - '0';
 		if (nbr > 2147483647 || nbr * signe < -2147483648)
-			return (0);
+			return (-1);
 		i++;
 	}
 	return ((int)(signe * nbr));

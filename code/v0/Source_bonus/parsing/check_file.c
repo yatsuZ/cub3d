@@ -6,7 +6,7 @@
 /*   By: lazanett <lazanett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 22:02:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2024/04/16 14:45:08 by lazanett         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:22:10 by lazanett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static bool	is_cub_file(char *file)
 	size_t	len;
 
 	len = ft_strlen(file);
-	if (len > 4 && ft_strcmp(file + len - 4, ".cub", -1))
+	if (len > 4 && ft_strcmp(file + len - 4, ".cub", 4))
 		return (true);
 	return (false);
 }
@@ -37,7 +37,7 @@ static bool	is_xpm_file(char *file)
 	size_t	len;
 
 	len = ft_strlen(file);
-	if (len > 4 && ft_strcmp(file + len - 4, ".xpm", -1))
+	if (len > 4 && ft_strcmp(file + len - 4, ".xpm", 4))
 		return (true);
 	return (false);
 }
